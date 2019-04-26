@@ -1,5 +1,6 @@
 package sample;
 
+import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,12 +13,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-
+import com.jfoenix.controls.JFXTextField;
 import java.sql.*;
 
 public class LoginFormController {
     @FXML
-    private TextField useridlogin, passwordFieldlogin;
+    private JFXTextField useridlogin;
+    @FXML
+    private JFXPasswordField passwordFieldlogin;
     @FXML
     private GridPane gpmain;
     @FXML
@@ -76,8 +79,14 @@ public class LoginFormController {
     @FXML
     protected void launchRegistrationForm(ActionEvent event) {
         try {
-            Stage stage = (Stage) gpmain.getScene().getWindow();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("registration_form.fxml")), 800, 500);
+//            Stage stage = (Stage) gpmain.getScene().getWindow();
+//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("registration_form.fxml")), 800, 500);
+//            stage.setScene(scene);
+//            stage.show();
+            Node node = (Node)event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("registration_form.fxml")));
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

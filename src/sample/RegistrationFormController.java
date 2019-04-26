@@ -3,6 +3,7 @@ import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -16,7 +17,6 @@ public class RegistrationFormController {
     private TextField nameField, address, regdid, doctor, userid;
     @FXML
     private PasswordField passwordField;
-    @FXML private GridPane gpreg;
     @FXML
     private Button submitButton;
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -99,8 +99,10 @@ public class RegistrationFormController {
     @FXML
     protected void launchLoginForm(ActionEvent event) {
         try {
-            Stage stage = (Stage) gpreg.getScene().getWindow();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login_form.fxml")), 800, 500);
+            Node node = (Node)event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login_form.fxml")));
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

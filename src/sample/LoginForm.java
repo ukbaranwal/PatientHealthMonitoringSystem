@@ -15,7 +15,7 @@ public class LoginForm extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("login_form.fxml"));
         primaryStage.setTitle("Patient Health Monitoring System");
-        primaryStage.setScene(new Scene(root,800,500));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 }
