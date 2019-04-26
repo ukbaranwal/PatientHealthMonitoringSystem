@@ -1,4 +1,5 @@
 package sample;
+import java.io.IOException;
 import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +10,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 public class RegistrationFormController {
@@ -108,5 +111,13 @@ public class RegistrationFormController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    public void minclick(MouseEvent event) throws IOException {
+        ((Stage)((Circle)event.getSource()).getScene().getWindow()).setIconified(true);
+    }
+    @FXML
+    public void closeclick(MouseEvent event) throws IOException {
+        System.exit(0);
     }
 }
