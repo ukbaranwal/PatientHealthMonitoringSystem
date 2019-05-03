@@ -1,27 +1,20 @@
 package sample;
-
-import com.jfoenix.controls.JFXPasswordField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class PatientRegistration1 {
     @FXML
-    private JFXTextField patients_name, patients_father, patients_contact, patients_email, patients_address, patients_blood, patients_marital, patients_height, patients_weight, patients_emergency;
+    private JFXTextField patients_name, patients_father, patients_contact, patients_email, patients_address, patients_blood, patients_marital, patients_height, patients_weight, patients_emergency, patients_showdob;
     @FXML
     private Button button_newpatient;
     @FXML
@@ -41,61 +34,89 @@ public class PatientRegistration1 {
             Window owner = ((Node)event.getTarget()).getScene().getWindow();
             if (patients_name.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Error!",
-                        "Please enter your User ID");
+                        "Please enter Patient's Name");
                 return;
             }
             if (patients_father.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Father Name");
+                return;
+            }
+            try{
+                LocalDate local = patients_dob.getValue();
+                c = local.toString();
+            }catch (Exception e){
+                c ="n";
+            }
+            if (c.equals("n")){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Date of Birth");
+                return;
+            }
+            if (patients_gender.getValue().toString().equals("Gender")){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Gender");
                 return;
             }
             if (patients_contact.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Contact no.");
                 return;
             }
             if (patients_email.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Email ID");
                 return;
             }
             if (patients_address.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Address");
                 return;
             }
             if (patients_blood.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Blood Group");
                 return;
             }
             if (patients_marital.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Marital Status");
                 return;
             }
             if (patients_height.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Height");
+                return;
+            }
+            try{
+                Integer.valueOf(patients_height.getText().toString());
+            }catch (Exception e){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Height in Numbers");
                 return;
             }
             if (patients_weight.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Patient's Weight");
+                return;
+            }
+            try{
+                Integer.valueOf(patients_weight.getText().toString());
+            }catch (Exception e){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Weight in Numbers");
                 return;
             }
             if (patients_emergency.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                        "Please enter a password");
+                        "Please enter Emergency Contact no.");
                 return;
             }
             a = patients_name.getText().toString();
             b = patients_father.getText().toString();
-//            LocalDate local = patients_dob.getValue();
-//            c = local.toString();
-            c = "1997/10/31";
-//            d = patients_gender.getValue().toString();
-            d = "male";
+            LocalDate locale = patients_dob.getValue();
+            c = locale.toString();
+            d = patients_gender.getValue().toString();
             e = patients_contact.getText().toString();
             f = patients_email.getText().toString();
             g = patients_address.getText().toString();

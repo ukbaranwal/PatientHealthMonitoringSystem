@@ -16,13 +16,14 @@ import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.concurrent.TimeUnit;
 
 public class PatientRegistration3 {
     @FXML
     private ComboBox patient_cigar, patient_alco, patient_activity, patient_food, patient_profession;
     @FXML
     private ImageView Bsecondpage;
-    private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v;
+    private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w;
     private static Integer j, k;
     @FXML
     private Button submitPatient;
@@ -30,14 +31,14 @@ public class PatientRegistration3 {
     static final String DB_URL = "jdbc:mysql://localhost/userdetails";
     static final String USER = "PHMS";
     static final String PASS = "31101997";
-    public void submit(String a, String b, String c, String d, String e, String f, String g, String h, String i, Integer j, Integer k, String l, String m, String n, String o, String p, String q, String r, String s, String t, String u, String v) {
+    public void submit(String a, String b, String c, String d, String e, String f, String g, String h, String i, Integer j, Integer k, String l, String m, String n, String o, String p, String q, String r, String s, String t, String u, String v, String w) {
         Connection con = null;
         Statement stmt = null;
         try {
             Class.forName(JDBC_DRIVER);
             con = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = con.createStatement();
-            String sql = "INSERT INTO patientdetails " + "VALUES('2','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"','"+n+"','"+o+"','"+p+"','"+q+"','"+r+"','"+s+"','"+t+"','"+u+"','"+v+"')";
+            String sql = "INSERT INTO patientdetails " + "VALUES('4','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"','"+n+"','"+o+"','"+p+"','"+q+"','"+r+"','"+s+"','"+t+"','"+u+"','"+v+"','"+w+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             //Handle errors for JDBC
@@ -59,6 +60,14 @@ public class PatientRegistration3 {
                 se.printStackTrace();
             }
         }
+    }
+
+    public static String getW() {
+        return w;
+    }
+
+    public static void setW(String w) {
+        PatientRegistration3.w = w;
     }
 
     public static String getA() {
@@ -250,16 +259,42 @@ public class PatientRegistration3 {
 //        }
 //    }
     @FXML
-    protected void submitForm(ActionEvent event) {
+    protected void submitForm(ActionEvent event) throws Exception {
         Window owner = submitPatient.getScene().getWindow();
-        r = patient_cigar.getValue().toString();
-        s = patient_alco.getValue().toString();
-        t = patient_activity.getValue().toString();
-        u = patient_food.getValue().toString();
-        v = patient_profession.getValue().toString();
-        submit(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v);
-        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
-                "Welcome ");
+        if(patient_cigar.getValue().toString().equals("Cigarette Consumption")){
+            s = "";
+        }else{
+            s = patient_cigar.getValue().toString();
+        }
+        if(patient_alco.getValue().toString().equals("Alcohol Consumption")){
+            t = "";
+        }else{
+            t = patient_alco.getValue().toString();
+        }
+        if(patient_activity.getValue().toString().equals("Activity Level")){
+            u = "";
+        }else{
+            u = patient_activity.getValue().toString();
+        }
+        if(patient_food.getValue().toString().equals("Food Preference")){
+            v = "";
+        }else{
+            v = patient_food.getValue().toString();
+        }
+        if(patient_profession.getValue().toString().equals("Profession")){
+            w = "";
+        }else{
+            w = patient_profession.getValue().toString();
+        }
+        submit(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w);
+        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "",
+                "Patient Added Successfuly!");
+        Node node = (Node)event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {

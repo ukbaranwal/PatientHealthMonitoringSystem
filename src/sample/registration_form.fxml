@@ -7,61 +7,61 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.shape.Circle?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="400" style="-fx-background-color: #2c344b;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegistrationFormController">
     <children>
-        <Circle fill="#fa4771" fx:id="close" onMouseClicked="#closeclick" layoutX="16.0" layoutY="18.0" radius="6.0" stroke="#fa4771" strokeType="INSIDE" />
+        <Circle fx:id="close" fill="#fa4771" layoutX="16.0" layoutY="18.0" onMouseClicked="#closeclick" radius="6.0" stroke="#fa4771" strokeType="INSIDE" />
         <Circle fx:id="min" fill="#ffc965" layoutX="34.0" layoutY="18.0" onMouseClicked="#minclick" radius="6.0" stroke="#ffc965" strokeType="INSIDE" />
         <Label alignment="CENTER" layoutX="5.0" layoutY="35.0" prefHeight="46.0" prefWidth="390.0" text="Register Your Hospital" textFill="WHITE">
             <font>
-                <Font size="20.0" />
+                <Font name="Skia" size="20.0" />
             </font>
         </Label>
-        <Button fx:id="submitButton" layoutX="-5.0" layoutY="543.0" onAction="#handleSubmitButtonAction" prefHeight="57.0" prefWidth="406.0" style="-fx-background-color: #43bb73;" text="Register">
+        <Button fx:id="submitButton" alignment="CENTER" layoutX="-5.0" layoutY="543.0" onAction="#handleSubmitButtonAction" prefHeight="57.0" prefWidth="406.0" style="-fx-background-color: #43bb73;" text="REGISTER" textAlignment="CENTER">
             <font>
-                <Font size="17.0" />
+                <Font name="Skia" size="17.0" />
             </font>
         </Button>
-        <JFXTextField fx:id="nameField" alignment="CENTER" layoutX="40.0" layoutY="110.0" prefHeight="33.0" prefWidth="320.0" promptText="Hospital's Name" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="nameField" alignment="CENTER" labelFloat="true" layoutX="65.0" layoutY="110.0" prefHeight="33.0" prefWidth="270.0" promptText="Hospital's Name" style="-fx-text-fill: WHITE">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Skia" size="18.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="address" alignment="CENTER" layoutX="40.0" layoutY="160.0" prefHeight="33.0" prefWidth="320.0" promptText="Address" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="address" alignment="CENTER" labelFloat="true" layoutX="65.0" layoutY="165.0" prefHeight="33.0" prefWidth="270.0" promptText="Address" style="-fx-text-fill: WHITE">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Skia" size="18.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="regdid" alignment="CENTER" layoutX="40.0" layoutY="210.0" prefHeight="33.0" prefWidth="320.0" promptText="Registration No." style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="doctor" alignment="CENTER" labelFloat="true" layoutX="65.0" layoutY="220.0" prefHeight="33.0" prefWidth="270.0" promptText="Doctor's Name" style="-fx-text-fill: WHITE">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Skia" size="18.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="doctor" alignment="CENTER" layoutX="40.0" layoutY="260.0" prefHeight="33.0" prefWidth="320.0" promptText="Doctor's Name" style="-fx-text-fill: WHITE">
-            <font>
-                <Font name="Arial" size="18.0" />
-            </font>
-        </JFXTextField>
-        <JFXTextField fx:id="userid" alignment="CENTER" layoutX="40.0" layoutY="310.0" prefHeight="33.0" prefWidth="320.0" promptText="User ID" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="userid" alignment="CENTER" labelFloat="true" layoutX="65.0" layoutY="275.0" prefHeight="33.0" prefWidth="270.0" promptText="User ID" style="-fx-text-fill: WHITE">
         <font>
-            <Font name="Arial" size="18.0" />
+            <Font name="Skia" size="18.0" />
         </font>
         </JFXTextField>
-        <JFXPasswordField fx:id="passwordField" alignment="CENTER" layoutX="40.0" layoutY="360" prefHeight="33.0" prefWidth="320.0" promptText="Password" style="-fx-text-fill: WHITE">
+        <JFXPasswordField fx:id="passwordField" alignment="CENTER" labelFloat="true" layoutX="65.0" layoutY="330" prefHeight="33.0" prefWidth="270.0" promptText="Password" style="-fx-text-fill: WHITE">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Skia" size="18.0" />
             </font>
         </JFXPasswordField>
-        <Label layoutX="193.0" layoutY="438.0" text="or" textFill="#8c90b3">
+        <JFXPasswordField fx:id="confirmField" alignment="CENTER" labelFloat="true" layoutX="65.0" layoutY="385" prefHeight="33.0" prefWidth="270.0" promptText="Confirm Password" style="-fx-text-fill: WHITE">
             <font>
-                <Font size="14.0" />
+                <Font name="Skia" size="18.0" />
+            </font>
+        </JFXPasswordField>
+        <Label layoutX="190.0" layoutY="460.0" text="OR" textFill="#8c90b3">
+            <font>
+                <Font name="Skia" size="14.0" />
             </font>
         </Label>
-        <Button fx:id="loginbutton" layoutX="170.0" layoutY="465.0" onAction="#launchLoginForm" style="-fx-background-color: #2c344b;" text="Login" textFill="#8c90b3">
+        <Button fx:id="loginbutton" layoutX="167.0" layoutY="485.0" onAction="#launchLoginForm" style="-fx-background-color: #2c344b;" text="LOGIN" textFill="#8c90b3">
             <font>
-                <Font size="14.0" />
+                <Font name="Skia" size="14.0" />
             </font>
         </Button>
         <ImageView fitHeight="62.0" fitWidth="67.0" layoutX="167.0" layoutY="26.3" opacity="0.2" pickOnBounds="true" preserveRatio="true">

@@ -17,23 +17,23 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 public class RegistrationFormController {
     @FXML
-    private TextField nameField, address, regdid, doctor, userid;
+    private TextField nameField, address, doctor, userid;
     @FXML
-    private PasswordField passwordField;
+    private PasswordField passwordField, confirmField;
     @FXML
     private Button submitButton;
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost/userdetails";
     static final String USER = "PHMS";
     static final String PASS = "31101997";
-    public void register(String a, String b, String c, String d, String e, String f) {
+    public void register(String a, String b, String c, String d, String e) {
         Connection con = null;
         Statement stmt = null;
         try {
             Class.forName(JDBC_DRIVER);
             con = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = con.createStatement();
-            String sql = "INSERT INTO details " + "VALUES ('102','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"')";
+            String sql = "INSERT INTO details " + "VALUES ('102','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             //Handle errors for JDBC
@@ -61,17 +61,12 @@ public class RegistrationFormController {
         Window owner = submitButton.getScene().getWindow();
         if (nameField.getText().isEmpty()) {
             AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter your name");
+                    "Please enter Hospital's name");
             return;
         }
         if (address.getText().isEmpty()) {
             AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter your address");
-            return;
-        }
-        if (regdid.getText().isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter your registration no.");
+                    "Please enter Hospital's address");
             return;
         }
         if (doctor.getText().isEmpty()) {
@@ -89,13 +84,22 @@ public class RegistrationFormController {
                     "Please enter a password");
             return;
         }
+        if (confirmField.getText().isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Please confirm your password");
+            return;
+        }
+        if (!passwordField.getText().equals(confirmField.getText())){
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Password doesn't match");
+            return;
+        }
         String a = nameField.getText().toString();
         String b = address.getText().toString();
-        String c = regdid.getText().toString();
-        String d = doctor.getText().toString();
-        String e = userid.getText().toString();
-        String f = passwordField.getText().toString();
-        register(a,b,c,d,e,f);
+        String c = doctor.getText().toString();
+        String d = userid.getText().toString();
+        String e = passwordField.getText().toString();
+        register(a,b,c,d,e);
         AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
                 "Welcome ");
     }

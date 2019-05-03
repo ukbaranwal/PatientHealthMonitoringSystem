@@ -1,47 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apmain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800" prefWidth="600" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PatientRegistration1">
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.effect.ColorAdjust?>
+<AnchorPane fx:id="apmain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680" prefWidth="450" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PatientRegistration1">
     <children>
-        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="560.0" layoutY="18.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="410.0" layoutY="18.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
             <image>
                 <Image url="@../resources/icons8-delete-filled-24.png" />
             </image>
         </ImageView>
-        <Label alignment="CENTER" layoutX="100.0" layoutY="30.0" prefHeight="46.0" prefWidth="390.0" text="Enter Patient Details" textFill="#000000">
+        <Label alignment="CENTER" layoutX="36.0" layoutY="30.0" prefHeight="46.0" prefWidth="384.0" text="Enter Patient Details" textFill="#000000">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="100.0" layoutY="50.0" prefHeight="46.0" prefWidth="390.0" text="(Personal)" textFill="#000000">
+        <Label alignment="CENTER" layoutX="30.0" layoutY="50.0" prefHeight="46.0" prefWidth="390.0" text="(Personal)" textFill="#000000">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <JFXTextField fx:id="patients_name" alignment="CENTER" layoutX="190.0" layoutY="100.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_name" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="100.0" prefHeight="33.0" prefWidth="300.0" promptText="Name" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_father" alignment="CENTER" layoutX="190.0" layoutY="140.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_father" alignment="BASELINE_LEFT" layoutX="75.0" layoutY="140.0" prefHeight="33.0" prefWidth="300.0" promptText="Father's Name" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXDatePicker defaultColor="#f3fcfb" fx:id="patients_dob" layoutX="190.0" layoutY="185.0" opacity="0.3" prefHeight="2.0" prefWidth="384.0">
-            
+        <JFXDatePicker fx:id="patients_dob" defaultColor="#4059a9" editable="false" layoutX="75.0" layoutY="186.0" opacity="0.4" prefHeight="27.0" prefWidth="305.0" promptText="Birth Date" style="-fx-text-fill: red;">
+
         </JFXDatePicker>
-        <ComboBox fx:id="patients_gender" layoutX="190.0" layoutY="230.0" prefHeight="33.0" prefWidth="350.0" promptText="choose" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+        <ComboBox fx:id="patients_gender" layoutX="75.0" layoutY="220.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" promptText="Gender" style="-fx-text-fill: BLACK; -fx-text-inner-color: #d4d4d4;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Male" />
@@ -49,101 +52,63 @@
                     <String fx:value="Others" />
                 </FXCollections>
             </items>
+            <value>
+                <String fx:value="Gender" />
+            </value>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
         </ComboBox>
-        <JFXTextField fx:id="patients_contact" alignment="CENTER" layoutX="190.0" layoutY="270.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_contact" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="255.0" prefHeight="33.0" prefWidth="300.0" promptText="Contact" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_email" alignment="CENTER" layoutX="190.0" layoutY="310.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_email" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="295.0" prefHeight="33.0" prefWidth="300.0" promptText="Email ID" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_address" alignment="CENTER" layoutX="190.0" layoutY="350.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_address" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="335.0" prefHeight="33.0" prefWidth="300.0" promptText="Address" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_blood" alignment="CENTER" layoutX="190.0" layoutY="390.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_blood" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="375.0" prefHeight="33.0" prefWidth="300.0" promptText="Blood Group" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_marital" alignment="CENTER" layoutX="190.0" layoutY="430.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_marital" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="415.0" prefHeight="33.0" prefWidth="300.0" promptText="Marital Status" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_height" alignment="CENTER" layoutX="190.0" layoutY="470.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_height" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="455.0" prefHeight="33.0" prefWidth="300.0" promptText="Height" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_weight" alignment="CENTER" layoutX="190.0" layoutY="510.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_weight" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="495.0" prefHeight="33.0" prefWidth="300.0" promptText="Weight" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-            <Font name="Arial" size="18.0" />
+            <Font name="Arial" size="14.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="patients_emergency" alignment="CENTER" layoutX="190.0" layoutY="550.0" opacity="0.3" prefHeight="33.0" prefWidth="350.0" style="-fx-text-fill: WHITE">
+        <JFXTextField fx:id="patients_emergency" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="535.0" prefHeight="33.0" prefWidth="300.0" promptText="Emergency Contact" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
             <font>
-                <Font name="Arial" size="18.0" />
+                <Font name="Arial" size="14.0" />
             </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
         </JFXTextField>
-        <ImageView fx:id="BsecondPage" fitHeight="50.0" fitWidth="50.0" layoutX="497.0" layoutY="705.0" onMouseClicked="#launchSecondPage">
+        <ImageView fx:id="BsecondPage" fitHeight="50.0" fitWidth="50.0" layoutX="349.0" layoutY="590.0" onMouseClicked="#launchSecondPage">
             <image>
                 <Image url="@../resources/icons8-next-page-64.png" />
             </image>
         </ImageView>
-      <Label layoutX="65.0" layoutY="110.0" prefHeight="33.0" prefWidth="168.0" text="Name">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="150.0" prefHeight="33.0" prefWidth="59.0" text="Father">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="195.0" prefHeight="23.0" prefWidth="42.0" text="DOB">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-        <Label layoutX="65.0" layoutY="240.0" prefHeight="23.0" prefWidth="95.0" text="Gender">
-            <font>
-                <Font size="15.0" />
-            </font></Label>
-      <Label layoutX="65.0" layoutY="280.0" prefHeight="33.0" prefWidth="95.0" text="Contact No.">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="320.0" prefHeight="33.0" prefWidth="69.0" text="Email ID">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="360.0" prefHeight="33.0" prefWidth="68.0" text="Address">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="400.0" prefHeight="33.0" prefWidth="131.0" text="Blood Group">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="440.0" prefHeight="33.0" prefWidth="123.0" text="Marital Status">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="480.0" prefHeight="33.0" prefWidth="115.0" text="Height(cms)">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="520.0" prefHeight="33.0" prefWidth="131.0" text="Weight(kgs)">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Label layoutX="65.0" layoutY="560.0" prefHeight="33.0" prefWidth="141.0" text="Emergency No.">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <ImageView fitHeight="46.0" fitWidth="42.0" layoutX="397.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+
+      <ImageView fitHeight="46.0" fitWidth="42.0" layoutX="325.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/clipboard%20(1).png" />
          </image>

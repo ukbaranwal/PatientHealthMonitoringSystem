@@ -1,4 +1,5 @@
 package sample;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,16 +10,23 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import org.controlsfx.control.CheckComboBox;
+
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Observable;
 
 public class PatientRegistration2 {
     @FXML
     private ComboBox patient_allergy, patient_curmedi, patient_pastmedi, patient_chronic, patient_injuries, patient_surgeries;
     @FXML
     private ImageView Bthirdpage;
-    public static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q;
+    @FXML
+    private CheckComboBox patients_allergy, patients_curmedi, patients_pastmedi, patients_chronic, patients_injuries, patients_surgeries;
+    public static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r;
     public static Integer j, k;
+
     public static String getA() {
         return a;
     }
@@ -171,17 +179,24 @@ public class PatientRegistration2 {
     protected void launchThirdPage(MouseEvent event) {
         try {
             Window owner = ((Node)event.getTarget()).getScene().getWindow();
-            m = patient_allergy.getValue().toString();
-            n = patient_curmedi.getValue().toString();
-            o = patient_pastmedi.getValue().toString();
-            p = patient_injuries.getValue().toString();
-            q = patient_surgeries.getValue().toString();
+            m = patients_allergy.getCheckModel().getCheckedItems().toString();
+            n = patients_curmedi.getCheckModel().getCheckedItems().toString();;
+            o = patients_pastmedi.getCheckModel().getCheckedItems().toString();
+            p = patients_chronic.getCheckModel().getCheckedItems().toString();
+            q = patients_injuries.getCheckModel().getCheckedItems().toString();
+            r = patients_surgeries.getCheckModel().getCheckedItems().toString();
+            m = m.substring(1,m.length()-1);
+            n = n.substring(1,m.length()-1);
+            o = o.substring(1,m.length()-1);
+            p = p.substring(1,m.length()-1);
+            q = q.substring(1,m.length()-1);
+            r = r.substring(1,m.length()-1);
+            System.out.println(m);
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_registration3.fxml"));
             PatientRegistration3 controller = fxmlLoader.<PatientRegistration3>getController();
-//            controller.setText(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q);
             controller.setA(a);
             controller.setB(b);
             controller.setC(c);
@@ -199,6 +214,7 @@ public class PatientRegistration2 {
             controller.setO(o);
             controller.setP(p);
             controller.setQ(q);
+            controller.setR(r);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();

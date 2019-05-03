@@ -1,80 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800" prefWidth="600" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PatientRegistration2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680" prefWidth="450" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PatientRegistration2">
     <children>
-        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="560.0" layoutY="18.0" opacity="0.5" onMouseClicked="#closeclick" preserveRatio="true">
+        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="410.0" layoutY="18.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
             <image>
                 <Image url="@../resources/icons8-delete-filled-24.png" />
             </image>
         </ImageView>
-        <Label alignment="CENTER" layoutX="100.0" layoutY="30.0" prefHeight="46.0" prefWidth="390.0" text="Enter Patient Details" textFill="#000000">
+        <Label alignment="CENTER" layoutX="36.0" layoutY="30.0" prefHeight="46.0" prefWidth="384.0" text="Enter Patient Details" textFill="#000000">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="100.0" layoutY="50.0" prefHeight="46.0" prefWidth="390.0" text="(Medical)" textFill="#000000">
+        <Label alignment="CENTER" layoutX="30.0" layoutY="50.0" prefHeight="46.0" prefWidth="390.0" text="(Medical)" textFill="#000000">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <ImageView fx:id="Bthirdpage" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#launchThirdPage" layoutX="497.0" layoutY="685.0">
+        <ImageView fx:id="Bthirdpage" fitHeight="50.0" fitWidth="50.0" layoutX="349.0" layoutY="590.0" onMouseClicked="#launchThirdPage">
             <image>
                 <Image url="@../resources/icons8-next-page-64.png" />
             </image>
         </ImageView>
-        <Label layoutX="80.0" layoutY="130.0" prefHeight="33.0" prefWidth="168.0" text="Allergies">
-            <font>
-                <Font size="15.0" />
-            </font></Label>
-        <Label layoutX="80.0" layoutY="205.0" prefHeight="33.0" prefWidth="150.0" text="Cur. Medications">
-            <font>
-                <Font size="15.0" />
-            </font></Label>
-        <Label layoutX="80.0" layoutY="280.0" prefHeight="33.0" prefWidth="150.0" text="Past Medications">
-            <font>
-                <Font size="15.0" />
-            </font></Label>
-        <Label layoutX="80.0" layoutY="355.0" prefHeight="33.0" prefWidth="141.0" text="Chronic Illness">
-            <font>
-                <Font size="15.0" />
-            </font></Label>
-        <Label layoutX="80.0" layoutY="430.0" prefHeight="33.0" prefWidth="69.0" text="Injuries">
-            <font>
-                <Font size="15.0" />
-            </font></Label>
-        <Label layoutX="80.0" layoutY="505.0" prefHeight="33.0" prefWidth="85.0" text="Surgeries">
-            <font>
-                <Font size="15.0" />
-            </font></Label>
-        <ImageView fitHeight="80.0" fitWidth="42.0" layoutX="397.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="46.0" fitWidth="42.0" layoutX="325.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../resources/clipboard%20(1).png" />
             </image>
         </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="43.0" layoutY="685.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="45.0" layoutY="590.0">
          <image>
             <Image url="@../resources/icons8-next-page-64%20copy.png" />
          </image>
       </ImageView>
-        <ComboBox fx:id="patient_allergy" layoutX="225.0" layoutY="125.0" prefHeight="33.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+        <CheckComboBox fx:id="patients_allergy" layoutX="75.0" layoutY="140.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Allergies" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
-                <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Lactose" />
                     <String fx:value="Soy" />
                     <String fx:value="Seafood" />
                     <String fx:value="Nuts" />
-                    <String fx:value="Eggs"/>
+                    <String fx:value="Eggs" />
                     <String fx:value="Fish" />
                     <String fx:value="Mushroom" />
                     <String fx:value="Gluten" />
@@ -87,30 +60,33 @@
                     <String fx:value="Mold" />
                     <String fx:value="Pets" />
                     <String fx:value="Others" />
-                </FXCollections>
             </items>
-        </ComboBox>
-        <ComboBox fx:id="patient_curmedi" layoutX="225.0" layoutY="200.0" prefHeight="33.0" prefWidth="275.0" promptText="choose" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+         <effect>
+            <ColorAdjust contrast="0.1" />
+         </effect>
+        </CheckComboBox>
+        <CheckComboBox fx:id="patients_curmedi" layoutX="75.0" layoutY="200.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Current Medications" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
-                <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Apple" />
                     <String fx:value="Orange" />
                     <String fx:value="Pear" />
-                </FXCollections>
             </items>
-        </ComboBox>
-        <ComboBox fx:id="patient_pastmedi" layoutX="225.0" layoutY="275.0" prefHeight="33.0" prefWidth="275.0" promptText="choose" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+         <effect>
+            <ColorAdjust contrast="0.1" />
+         </effect>
+        </CheckComboBox>
+        <CheckComboBox fx:id="patients_pastmedi" layoutX="75.0" layoutY="260.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Past Medications" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
-                <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Apple" />
                     <String fx:value="Orange" />
                     <String fx:value="Pear" />
-                </FXCollections>
             </items>
-        </ComboBox>
-        <ComboBox fx:id="patient_chronic" layoutX="225.0" layoutY="350.0" prefHeight="33.0" prefWidth="275.0" promptText="choose" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </CheckComboBox>
+        <CheckComboBox fx:id="patients_chronic" layoutX="75.0" layoutY="320.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Chronic Diseases" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
-                <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Diabetes" />
                     <String fx:value="Hypertension" />
                     <String fx:value="PCOS" />
@@ -122,12 +98,13 @@
                     <String fx:value="Mental Illness/Depression" />
                     <String fx:value="Fertility Issues" />
                     <String fx:value="Others" />
-                </FXCollections>
             </items>
-        </ComboBox>
-        <ComboBox fx:id="patient_injuries" layoutX="225.0" layoutY="425.0" prefHeight="33.0" prefWidth="275.0" promptText="choose" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </CheckComboBox>
+        <CheckComboBox fx:id="patients_injuries" layoutX="75.0" layoutY="380.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Past Inuries" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
-                <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Burns" />
                     <String fx:value="Spinal Cord" />
                     <String fx:value="Spinal Fracture" />
@@ -140,12 +117,13 @@
                     <String fx:value="Facial Trauma" />
                     <String fx:value="Accoustic Trauma" />
                     <String fx:value="Others" />
-                </FXCollections>
             </items>
-        </ComboBox>
-        <ComboBox fx:id="patient_surgeries" layoutX="225.0" layoutY="500.0" prefHeight="33.0" prefWidth="275.0" promptText="choose" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </CheckComboBox>
+        <CheckComboBox fx:id="patients_surgeries" layoutX="75.0" layoutY="440.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Surgeries" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
-                <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Heart" />
                     <String fx:value="Liver" />
                     <String fx:value="Kidney" />
@@ -153,8 +131,10 @@
                     <String fx:value="Brain" />
                     <String fx:value="Facial/Cosmetic" />
                     <String fx:value="Others" />
-                </FXCollections>
             </items>
-        </ComboBox>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </CheckComboBox>
     </children>
 </AnchorPane>

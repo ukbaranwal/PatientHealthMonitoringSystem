@@ -22,8 +22,6 @@ public class LoginFormController {
     @FXML
     private JFXPasswordField passwordFieldlogin;
     @FXML
-    private GridPane gpmain;
-    @FXML
     private Button submitloginButton;
 
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -40,7 +38,7 @@ public class LoginFormController {
             return;
         }
         if (passwordFieldlogin.getText().isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Error!",
                     "Please enter a password");
             return;
         }
@@ -58,7 +56,6 @@ public class LoginFormController {
             psm.setString(2, pass);
             rs = psm.executeQuery();
             if (rs.next()) {
-                System.out.println("Succes");
                 Node node = (Node)event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
                 stage.close();

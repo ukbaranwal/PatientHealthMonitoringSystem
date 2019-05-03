@@ -47,7 +47,8 @@
                 <TextField alignment="CENTER_LEFT" minWidth="250.0" prefHeight="47.0" prefWidth="216.0" promptText="Search by...">
                      <opaqueInsets>
                         <Insets />
-                     </opaqueInsets></TextField>
+                     </opaqueInsets>
+                </TextField>
             </children>
             <VBox.margin>
                <Insets />
