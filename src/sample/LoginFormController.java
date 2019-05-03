@@ -1,22 +1,18 @@
 package sample;
-
 import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
-
 import java.io.IOException;
 import java.sql.*;
 
@@ -63,14 +59,12 @@ public class LoginFormController {
             rs = psm.executeQuery();
             if (rs.next()) {
                 System.out.println("Succes");
-//                Stage stage = (Stage) gpmain.getScene().getWindow();
-////                Node node = (Node)event.getSource();
-////                Stage dialogStage = (Stage) node.getScene().getWindow();
-////                dialogStage.close();
-//                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("registration_form.fxml")),800,500);
-//////                Parent root = event.getSource();
-//                stage.setScene(scene);
-//                stage.show();
+                Node node = (Node)event.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
+                stage.close();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));
+                stage.setScene(scene);
+                stage.show();
             } else {
                 System.out.println("Failed");
             }
@@ -83,10 +77,6 @@ public class LoginFormController {
     @FXML
     protected void launchRegistrationForm(ActionEvent event) {
         try {
-//            Stage stage = (Stage) gpmain.getScene().getWindow();
-//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("registration_form.fxml")), 800, 500);
-//            stage.setScene(scene);
-//            stage.show();
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
