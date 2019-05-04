@@ -33,8 +33,8 @@ public class PatientWholeDetails implements Initializable {
     static final String DB_URL = "jdbc:mysql://localhost/userdetails";
     static final String USER = "PHMS";
     static final String PASS = "31101997";
-    public static String ID="5";
-    public static void setID(String ID) {
+    public static int ID;
+    public static void setID(int ID) {
         PatientWholeDetails.ID = ID;
     }
     public void setDetails(){
