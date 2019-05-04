@@ -53,7 +53,7 @@ public class PatientsList implements Initializable {
             String sql = "SELECT * from patientdetails";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                pd = new PatientDetails(rs.getString("name"), rs.getString("father"), rs.getString("contact"), rs.getString("email"), rs.getString("gender"), rs.getString("dob"), rs.getString("emergency"), rs.getString("address"), rs.getInt("id"));
+                pd = new PatientDetails(rs.getString("name"), rs.getString("father"), rs.getString("contact"), rs.getString("email"), rs.getString("gender").substring(1), rs.getString("dob"), rs.getString("emergency"), rs.getString("address"), rs.getInt("id"));
                 list.add(pd);
             }
         } catch (Exception e) {

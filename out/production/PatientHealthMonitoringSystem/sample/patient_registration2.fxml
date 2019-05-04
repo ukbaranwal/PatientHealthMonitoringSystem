@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -41,7 +42,7 @@
             <Image url="@../resources/icons8-next-page-64%20copy.png" />
          </image>
       </ImageView>
-        <CheckComboBox fx:id="patients_allergy" layoutX="75.0" layoutY="140.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Allergies" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+        <CheckComboBox fx:id="patients_allergy" layoutX="75.0" layoutY="260.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Allergies" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
                     <String fx:value="Lactose" />
                     <String fx:value="Soy" />
@@ -65,26 +66,14 @@
             <ColorAdjust contrast="0.1" />
          </effect>
         </CheckComboBox>
-        <CheckComboBox fx:id="patients_curmedi" layoutX="75.0" layoutY="200.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Current Medications" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
-            <items>
-                    <String fx:value="Apple" />
-                    <String fx:value="Orange" />
-                    <String fx:value="Pear" />
-            </items>
+        <TextField fx:id="patients_curmedi" layoutX="75.0" layoutY="140.0" prefHeight="33.0" prefWidth="300.0" promptText="Current Medications" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
          <effect>
             <ColorAdjust contrast="0.1" />
-         </effect>
-        </CheckComboBox>
-        <CheckComboBox fx:id="patients_pastmedi" layoutX="75.0" layoutY="260.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Past Medications" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
-            <items>
-                    <String fx:value="Apple" />
-                    <String fx:value="Orange" />
-                    <String fx:value="Pear" />
-            </items>
-            <effect>
-                <ColorAdjust contrast="0.1" />
-            </effect>
-        </CheckComboBox>
+         </effect></TextField>
+        <TextField fx:id="patients_pastmedi" layoutX="75.0" layoutY="200.0" prefHeight="33.0" prefWidth="300.0" promptText="Past Medications" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+         <effect>
+            <ColorAdjust contrast="0.1" />
+         </effect></TextField>
         <CheckComboBox fx:id="patients_chronic" layoutX="75.0" layoutY="320.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" title="Chronic Diseases" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
             <items>
                     <String fx:value="Diabetes" />

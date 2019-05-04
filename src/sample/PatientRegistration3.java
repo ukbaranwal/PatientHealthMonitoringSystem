@@ -1,5 +1,6 @@
 package sample;
 
+import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -23,7 +25,9 @@ public class PatientRegistration3 {
     private ComboBox patient_cigar, patient_alco, patient_activity, patient_food, patient_profession;
     @FXML
     private ImageView Bsecondpage;
-    private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w;
+    @FXML
+    private TextArea patient_extra;
+    private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x;
     private static Integer j, k;
     @FXML
     private Button submitPatient;
@@ -31,14 +35,14 @@ public class PatientRegistration3 {
     static final String DB_URL = "jdbc:mysql://localhost/userdetails";
     static final String USER = "PHMS";
     static final String PASS = "31101997";
-    public void submit(String a, String b, String c, String d, String e, String f, String g, String h, String i, Integer j, Integer k, String l, String m, String n, String o, String p, String q, String r, String s, String t, String u, String v, String w) {
+    public void submit(String a, String b, String c, String d, String e, String f, String g, String h, String i, Integer j, Integer k, String l, String m, String n, String o, String p, String q, String r, String s, String t, String u, String v, String w, String x) {
         Connection con = null;
         Statement stmt = null;
         try {
             Class.forName(JDBC_DRIVER);
             con = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = con.createStatement();
-            String sql = "INSERT INTO patientdetails " + "VALUES('4','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"','"+n+"','"+o+"','"+p+"','"+q+"','"+r+"','"+s+"','"+t+"','"+u+"','"+v+"','"+w+"')";
+            String sql = "INSERT INTO patientdetails " + "VALUES('5','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"','"+n+"','"+o+"','"+p+"','"+q+"','"+r+"','"+s+"','"+t+"','"+u+"','"+v+"','"+w+"','"+x+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             //Handle errors for JDBC
@@ -264,29 +268,30 @@ public class PatientRegistration3 {
         if(patient_cigar.getValue().toString().equals("Cigarette Consumption")){
             s = "";
         }else{
-            s = patient_cigar.getValue().toString();
+            s = patient_cigar.getSelectionModel().getSelectedIndex()+patient_cigar.getValue().toString();
         }
         if(patient_alco.getValue().toString().equals("Alcohol Consumption")){
             t = "";
         }else{
-            t = patient_alco.getValue().toString();
+            t = patient_alco.getSelectionModel().getSelectedIndex()+patient_alco.getValue().toString();
         }
         if(patient_activity.getValue().toString().equals("Activity Level")){
             u = "";
         }else{
-            u = patient_activity.getValue().toString();
+            u = patient_activity.getSelectionModel().getSelectedIndex()+patient_activity.getValue().toString();
         }
         if(patient_food.getValue().toString().equals("Food Preference")){
             v = "";
         }else{
-            v = patient_food.getValue().toString();
+            v = patient_food.getSelectionModel().getSelectedIndex()+patient_food.getValue().toString();
         }
         if(patient_profession.getValue().toString().equals("Profession")){
             w = "";
         }else{
-            w = patient_profession.getValue().toString();
+            w = patient_profession.getSelectionModel().getSelectedIndex()+patient_profession.getValue().toString();
         }
-        submit(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w);
+        x = patient_extra.getText().toString();
+        submit(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x);
         AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "",
                 "Patient Added Successfuly!");
         Node node = (Node)event.getSource();

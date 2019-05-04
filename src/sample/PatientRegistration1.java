@@ -14,11 +14,11 @@ import java.time.LocalDate;
 
 public class PatientRegistration1 {
     @FXML
-    private JFXTextField patients_name, patients_father, patients_contact, patients_email, patients_address, patients_blood, patients_marital, patients_height, patients_weight, patients_emergency, patients_showdob;
+    private TextField patients_name, patients_father, patients_contact, patients_email, patients_address, patients_blood, patients_marital, patients_height, patients_weight, patients_emergency;
     @FXML
     private Button button_newpatient;
     @FXML
-    private ComboBox patients_gender, patient_allergy, patient_curmedi, patient_pastmedi, patient_chronic, patient_injuries, patient_surgeries, patient_cigar, patient_alco, patient_activity, patient_food, patient_profession;
+    private ComboBox patients_gender;
     @FXML
     private DatePicker patients_dob;
     private static Integer j, k;
@@ -116,7 +116,7 @@ public class PatientRegistration1 {
             b = patients_father.getText().toString();
             LocalDate locale = patients_dob.getValue();
             c = locale.toString();
-            d = patients_gender.getValue().toString();
+            d = patients_gender.getSelectionModel().getSelectedIndex()+patients_gender.getValue().toString();
             e = patients_contact.getText().toString();
             f = patients_email.getText().toString();
             g = patients_address.getText().toString();

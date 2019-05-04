@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820" prefWidth="600" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PatientWholeDetails">
+    <children>
+        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="553.0" layoutY="22.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+            <image>
+                <Image url="@../resources/icons8-delete-filled-24.png" />
+            </image>
+        </ImageView>
+        <JFXTextField fx:id="patients_wname" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="90.0" prefHeight="23.0" prefWidth="200.0" promptText="Name" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wfather" alignment="BASELINE_LEFT" editable="false" labelFloat="true" layoutX="330.0" layoutY="90.0" prefHeight="23.0" prefWidth="200.0" promptText="Father's Name" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wdob" editable="false" labelFloat="true" layoutX="60.0" layoutY="130" prefHeight="23.0" prefWidth="200.0" promptText="Birth Date" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wgender" labelFloat="true" layoutX="330.0" layoutY="130.0" prefHeight="23.0" prefWidth="200.0" promptText="Gender" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wcontact" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="170.0" prefHeight="23.0" prefWidth="200.0" promptText="Contact" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wemail" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="330.0" layoutY="170.0" prefHeight="23.0" prefWidth="200.0" promptText="Email ID" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_waddress" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="210.0" prefHeight="23.0" prefWidth="200.0" promptText="Address" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wblood" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="330.0" layoutY="210.0" prefHeight="23.0" prefWidth="200.0" promptText="Blood Group" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wmarital" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="250.0" prefHeight="23.0" prefWidth="200.0" promptText="Marital Status" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wheight" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="330.0" layoutY="250.0" prefHeight="23.0" prefWidth="200.0" promptText="Height" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wweight" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="290.0" prefHeight="23.0" prefWidth="200.0" promptText="Weight" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wemergency" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="330.0" layoutY="290.0" prefHeight="23.0" prefWidth="200.0" promptText="Emergency Contact" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wallergy" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="410.0" prefHeight="23.0" prefWidth="470.0" promptText="Allergies" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wcurmedi" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="330.0" prefHeight="23.0" prefWidth="470.0" promptText="Current Medications" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wpastmedi" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="370.0" prefHeight="23.0" prefWidth="470.0" promptText="Past Medications" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wchronic" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="450.0" prefHeight="23.0" prefWidth="470.0" promptText="Chronic Diseases" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_winjury" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="490.0" prefHeight="23.0" prefWidth="470.0" promptText="Past Injuries" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wsurgery" alignment="BOTTOM_LEFT" editable="false" labelFloat="true" layoutX="60.0" layoutY="530.0" prefHeight="23.0" prefWidth="470.0" promptText="Surgeries" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wcigar" labelFloat="true" layoutX="60.0" layoutY="570.0" prefHeight="23.0" prefWidth="200.0" promptText="Cigarette Consumption" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font></JFXTextField>
+        <JFXTextField fx:id="patients_walco" labelFloat="true" layoutX="60.0" layoutY="610.0" prefHeight="23.0" prefWidth="200.0" promptText="Alcohol Consumption" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font></JFXTextField>
+        <JFXTextField fx:id="patients_wactivity" labelFloat="true" layoutX="60.0" layoutY="650.0" prefHeight="23.0" prefWidth="200.0" promptText="Activity Level" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font></JFXTextField>
+        <JFXTextField fx:id="patients_wfood" labelFloat="true" layoutX="60.0" layoutY="690.0" prefHeight="23.0" prefWidth="200.0" promptText="Food Preference" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="13.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_wprofession" labelFloat="true" layoutX="60.0" layoutY="730.0" prefHeight="23.0" prefWidth="200.0" promptText="Profession" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="13.0" />
+            </font>
+        </JFXTextField>
+        <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="515.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="530.0" layoutY="25.5" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/pencil-edit-button.png" />
+            </image>
+        </ImageView>
+        <JFXTextArea fx:id="patients_wextra" editable="false" labelFloat="true" layoutX="329.0" layoutY="569.0" prefHeight="188.0" prefWidth="200.0" promptText="Extra Details" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4" wrapText="true" />
+      <Label fx:id="patients_wid" alignment="CENTER" layoutX="58.0" layoutY="39.0" opacity="0.5" prefHeight="30.0" prefWidth="470.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

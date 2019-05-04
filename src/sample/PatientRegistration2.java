@@ -1,4 +1,5 @@
 package sample;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -19,11 +21,11 @@ import java.util.Observable;
 
 public class PatientRegistration2 {
     @FXML
-    private ComboBox patient_allergy, patient_curmedi, patient_pastmedi, patient_chronic, patient_injuries, patient_surgeries;
-    @FXML
     private ImageView Bthirdpage;
     @FXML
-    private CheckComboBox patients_allergy, patients_curmedi, patients_pastmedi, patients_chronic, patients_injuries, patients_surgeries;
+    private TextField patients_curmedi, patients_pastmedi;
+    @FXML
+    private CheckComboBox patients_allergy, patients_chronic, patients_injuries, patients_surgeries;
     public static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r;
     public static Integer j, k;
 
@@ -180,18 +182,15 @@ public class PatientRegistration2 {
         try {
             Window owner = ((Node)event.getTarget()).getScene().getWindow();
             m = patients_allergy.getCheckModel().getCheckedItems().toString();
-            n = patients_curmedi.getCheckModel().getCheckedItems().toString();;
-            o = patients_pastmedi.getCheckModel().getCheckedItems().toString();
+            n = patients_curmedi.getText().toString();;
+            o = patients_pastmedi.getText().toString();
             p = patients_chronic.getCheckModel().getCheckedItems().toString();
             q = patients_injuries.getCheckModel().getCheckedItems().toString();
             r = patients_surgeries.getCheckModel().getCheckedItems().toString();
             m = m.substring(1,m.length()-1);
-            n = n.substring(1,m.length()-1);
-            o = o.substring(1,m.length()-1);
-            p = p.substring(1,m.length()-1);
-            q = q.substring(1,m.length()-1);
-            r = r.substring(1,m.length()-1);
-            System.out.println(m);
+            p = p.substring(1,p.length()-1);
+            q = q.substring(1,q.length()-1);
+            r = r.substring(1,r.length()-1);
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
