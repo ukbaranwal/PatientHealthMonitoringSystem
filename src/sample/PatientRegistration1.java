@@ -1,6 +1,7 @@
 package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -10,9 +11,12 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 
-public class PatientRegistration1 {
+public class PatientRegistration1 implements Initializable{
     @FXML
     private TextField patients_name, patients_father, patients_contact, patients_email, patients_address, patients_blood, patients_marital, patients_height, patients_weight, patients_emergency;
     @FXML
@@ -27,6 +31,34 @@ public class PatientRegistration1 {
     static final String DB_URL = "jdbc:mysql://localhost/userdetails";
     static final String USER = "PHMS";
     static final String PASS = "31101997";
+    private static Integer flag;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        patients_dob.setValue(LocalDate.of(1997,10,31));
+        try{
+        if(PatientRegistrationDetails.getFlag()==1){
+            patients_name.setText(PatientRegistrationDetails.getA());
+            patients_father.setText(PatientRegistrationDetails.getB());
+            int day = Integer.parseInt(PatientRegistrationDetails.getC().substring(8,10));
+            int month = Integer.parseInt(PatientRegistrationDetails.getC().substring(5,7));
+            int year = Integer.parseInt(PatientRegistrationDetails.getC().substring(0,4));
+            patients_dob.setValue(LocalDate.of(year,month,day));
+            patients_gender.getSelectionModel().select(Integer.parseInt(PatientRegistrationDetails.getD().substring(0,1)));
+            patients_contact.setText(PatientRegistrationDetails.getE());
+            patients_email.setText(PatientRegistrationDetails.getF());
+            patients_address.setText(PatientRegistrationDetails.getG());
+            patients_blood.setText(PatientRegistrationDetails.getH());
+            patients_marital.setText(PatientRegistrationDetails.getI());
+            patients_height.setText(PatientRegistrationDetails.getJ().toString());
+            patients_weight.setText(PatientRegistrationDetails.getK().toString());
+            patients_emergency.setText(PatientRegistrationDetails.getL());
+        }
+        }
+        catch (Exception e){
+
+        }
+    }
 
     @FXML
     protected void launchSecondPage(MouseEvent event) {
@@ -129,7 +161,7 @@ public class PatientRegistration1 {
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_registration2.fxml"));
-            PatientRegistration2 controller = fxmlLoader.<PatientRegistration2>getController();
+            PatientRegistrationDetails controller = fxmlLoader.<PatientRegistrationDetails>getController();
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();
@@ -145,13 +177,17 @@ public class PatientRegistration1 {
             controller.setJ(j);
             controller.setK(k);
             controller.setL(l);
+            controller.setFlag(1);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        System.exit(0);
+        Window owner = ((Node)event.getTarget()).getScene().getWindow();
+        Node node = (Node)event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
     }
 }
 

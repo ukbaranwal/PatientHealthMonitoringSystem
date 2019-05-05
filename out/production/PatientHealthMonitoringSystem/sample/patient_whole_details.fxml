@@ -124,8 +124,7 @@
                 <Font name="Arial" size="13.0" />
             </font>
         </JFXTextField>
-        <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="515.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
-        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="530.0" layoutY="25.5" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+        <ImageView onMouseClicked="#launchEditPage" fitHeight="17.0" fitWidth="17.0" layoutX="530.0" layoutY="25.5" opacity="0.4" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../resources/pencil-edit-button.png" />
             </image>

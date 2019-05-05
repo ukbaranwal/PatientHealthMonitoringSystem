@@ -2,6 +2,7 @@ package sample;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,11 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 public class PatientsList implements Initializable {
 
@@ -47,15 +50,16 @@ public class PatientsList implements Initializable {
         Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
         tablepatient.getItems().setAll(parseUserList());
-        tablepatient.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+        tablepatient.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                try{
+            public void handle(MouseEvent event) {
+                if (event.getClickCount() == 2) {
+                    int index = tablepatient.getSelectionModel().getFocusedIndex();
+                    try{
                     Stage stage = (Stage)rootpane.getScene().getWindow();
-//                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_whole_details.fxml")));
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_whole_details.fxml"));
                     PatientWholeDetails controller = fxmlLoader.<PatientWholeDetails>getController();
-                    controller.setID(newValue.intValue()+1);
+                    controller.setID(index+1);
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage newWindow = new Stage();
                     newWindow.initStyle(StageStyle.TRANSPARENT);
@@ -66,8 +70,30 @@ public class PatientsList implements Initializable {
                 catch (Exception e){
 
                 }
+                }
             }
         });
+//        tablepatient.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+//            @Override
+//            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+//                try{
+//                    Stage stage = (Stage)rootpane.getScene().getWindow();
+////                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_whole_details.fxml")));
+//                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_whole_details.fxml"));
+//                    PatientWholeDetails controller = fxmlLoader.<PatientWholeDetails>getController();
+//                    controller.setID(newValue.intValue()+1);
+//                    Scene scene = new Scene(fxmlLoader.load());
+//                    Stage newWindow = new Stage();
+//                    newWindow.initStyle(StageStyle.TRANSPARENT);
+//                    newWindow.setScene(scene);
+//                    newWindow.initModality(Modality.WINDOW_MODAL);
+//                    newWindow.initOwner(stage);
+//                    newWindow.show();}
+//                catch (Exception e){
+//
+//                }
+//            }
+//        });
     }
     private List<PatientDetails> parseUserList() {
         List<PatientDetails> list = new ArrayList<PatientDetails>();

@@ -37,7 +37,7 @@
                 <Image url="@../resources/clipboard%20(1).png" />
             </image>
         </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="45.0" layoutY="590.0">
+      <ImageView fitHeight="50.0" onMouseClicked="#launchFirstPage" fitWidth="50.0" layoutX="45.0" layoutY="590.0">
          <image>
             <Image url="@../resources/icons8-next-page-64%20copy.png" />
          </image>

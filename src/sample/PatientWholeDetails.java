@@ -86,17 +86,20 @@ public class PatientWholeDetails implements Initializable {
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_edit_details.fxml"));
             PatientEditDetails controller = fxmlLoader.<PatientEditDetails>getController();
+            controller.setID(ID);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();
-            controller.setID(ID);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        System.exit(0);
+        Window owner = ((Node)event.getTarget()).getScene().getWindow();
+        Node node = (Node)event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
     }
 
     @Override

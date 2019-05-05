@@ -95,7 +95,10 @@ public class PatientEditDetails implements Initializable {
 //    }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        System.exit(0);
+        Window owner = ((Node)event.getTarget()).getScene().getWindow();
+        Node node = (Node)event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
     }
 
     @Override
@@ -135,6 +138,81 @@ public class PatientEditDetails implements Initializable {
     protected void saveDetails(MouseEvent event){
         try {
             Window owner = ((Node)event.getTarget()).getScene().getWindow();
+            if (patients_ename.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Error!",
+                        "Please enter Patient's Name");
+                return;
+            }
+            if (patients_efather.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Father Name");
+                return;
+            }
+
+            if (patients_edob.getText().isEmpty()){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Date of Birth");
+                return;
+            }
+            if (patients_egender.getValue().toString().equals("Gender")){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Gender");
+                return;
+            }
+            if (patients_econtact.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Contact no.");
+                return;
+            }
+            if (patients_eemail.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Email ID");
+                return;
+            }
+            if (patients_eaddress.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Address");
+                return;
+            }
+            if (patients_eblood.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Blood Group");
+                return;
+            }
+            if (patients_emarital.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Marital Status");
+                return;
+            }
+            if (patients_eheight.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Height");
+                return;
+            }
+            try{
+                Integer.valueOf(patients_eheight.getText().toString());
+            }catch (Exception e){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Height in Numbers");
+                return;
+            }
+            if (patients_eweight.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Patient's Weight");
+                return;
+            }
+            try{
+                Integer.valueOf(patients_eweight.getText().toString());
+            }catch (Exception e){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Weight in Numbers");
+                return;
+            }
+            if (patients_eemergency.getText().isEmpty()) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Emergency Contact no.");
+                return;
+            }
             a=patients_ename.getText();
             b=patients_efather.getText();
             c=patients_edob.getText();
