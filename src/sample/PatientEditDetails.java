@@ -16,6 +16,7 @@ import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import sample.PatientsList.*;
 
 public class PatientEditDetails implements Initializable {
     @FXML
