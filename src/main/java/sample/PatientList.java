@@ -29,7 +29,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
-public class PatientsList implements Initializable {
+public class PatientList implements Initializable {
 
     @FXML
     private TableView<PatientDetails> tablepatient;
@@ -49,7 +49,7 @@ public class PatientsList implements Initializable {
     }
 
     public static void setSearchWord(String searchWord) {
-        PatientsList.searchWord = searchWord;
+        PatientList.searchWord = searchWord;
     }
 
     public static String getSearchFlag() {
@@ -57,7 +57,7 @@ public class PatientsList implements Initializable {
     }
 
     public static void setSearchFlag(String searchFlag) {
-        PatientsList.searchFlag = searchFlag;
+        PatientList.searchFlag = searchFlag;
     }
 
     @Override
@@ -95,7 +95,23 @@ public class PatientsList implements Initializable {
         MenuItem item2 = new MenuItem("Create an Appointment");
         item2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-                System.out.println("Preferences");
+                try {
+                    Stage stage = (Stage) rootpane.getScene().getWindow();
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("create_appointment.fxml"));
+                    CreateAppointment controller = fxmlLoader.<CreateAppointment>getController();
+                    controller.setID(tablepatient.getSelectionModel().getSelectedItem().getID());
+                    controller.setName(tablepatient.getSelectionModel().getSelectedItem().getName());
+                    controller.setContact(tablepatient.getSelectionModel().getSelectedItem().getMobile());
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage newWindow = new Stage();
+                    newWindow.initStyle(StageStyle.TRANSPARENT);
+                    newWindow.setScene(scene);
+                    newWindow.initModality(Modality.WINDOW_MODAL);
+                    newWindow.initOwner(stage);
+                    newWindow.show();
+                } catch (Exception ex) {
+
+                }
             }
         });
         final ContextMenu contextMenu = new ContextMenu(item1, item2);
@@ -161,7 +177,7 @@ public class PatientsList implements Initializable {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
             stmt = conn.createStatement();
-            String sql = "SELECT * from patientdetails where " + PatientsList.getSearchFlag() + "='" + PatientsList.getSearchWord() + "';";
+            String sql = "SELECT * from patientdetails where " + PatientList.getSearchFlag() + "='" + PatientList.getSearchWord() + "';";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 pd = new PatientDetails(rs.getString("name"), rs.getString("father"), rs.getString("contact"), rs.getString("email"), rs.getString("gender").substring(1), rs.getString("dob"), rs.getString("emergency"), rs.getString("address"), rs.getInt("id"));

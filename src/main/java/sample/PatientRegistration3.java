@@ -136,10 +136,12 @@ public class PatientRegistration3 {
         }
         x = patient_extra.getText().toString();
         submit(PatientRegistrationDetails.getA(),PatientRegistrationDetails.getB(),PatientRegistrationDetails.getC(),PatientRegistrationDetails.getD(),PatientRegistrationDetails.getE(),PatientRegistrationDetails.getF(),PatientRegistrationDetails.getG(),PatientRegistrationDetails.getH(),PatientRegistrationDetails.getI(),PatientRegistrationDetails.getJ(),PatientRegistrationDetails.getK(),PatientRegistrationDetails.getL(),PatientRegistrationDetails.getM(),PatientRegistrationDetails.getN(),PatientRegistrationDetails.getO(),PatientRegistrationDetails.getP(),PatientRegistrationDetails.getQ(),PatientRegistrationDetails.getR(),s,t,u,v,w,x);
-        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "", "Patient Added Successfuly!");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Patient Added Successfully");
+        alert.showAndWait();
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
+        stage = new Stage();
         PatientRegistrationDetails.setFlag(0);
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));
         stage.setScene(scene);

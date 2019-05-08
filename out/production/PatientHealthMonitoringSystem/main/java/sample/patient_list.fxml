@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="rootpane" prefHeight="1000.0" prefWidth="1440.0" style="-fx-background-color: #43bb73;" stylesheets="@../resources/style.css" StackPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientsList">
+<GridPane fx:id="rootpane" prefHeight="1000.0" prefWidth="1440.0" style="-fx-background-color: #43bb73;" stylesheets="@../resources/style.css" StackPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientList">
     <ImageView fitHeight="22.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="0">
         <image>
             <Image url="@../resources/red-30141_640.png" />
@@ -28,7 +28,7 @@
             <Image url="@../resources/red-30141_640.png" />
         </image>
     </ImageView>
-    <Button fx:id="button_newpatient" minWidth="308.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="ADD NEW PATIENT" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <Button minWidth="308.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="ADD NEW PATIENT" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
         <graphic>
             <ImageView fitHeight="116.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -37,6 +37,9 @@
             </ImageView>
         </graphic>
     </Button>
+    <Button alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    </Button>
+
     <TextField fx:id="searchID" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnID" prefHeight="45.0" prefWidth="204.0" promptText="Search by ID..." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
     </TextField>
     <TextField fx:id="searchName" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnName" prefHeight="45.0" prefWidth="204.0" promptText="Search by Name..." GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
@@ -68,6 +71,7 @@
       <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
       <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
       <ColumnConstraints maxWidth="210.0" minWidth="162.0" prefWidth="210.0" />
+      <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints maxHeight="200.0" minHeight="60.0" prefHeight="66.0" />

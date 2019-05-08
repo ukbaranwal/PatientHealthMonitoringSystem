@@ -11,5 +11,6 @@
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
     <orderEntry type="library" name="controlsfx-8.40.15" level="project" />
     <orderEntry type="library" name="org.json" level="project" />
+    <orderEntry type="library" name="twilio-7.3.0-jar-with-dependencies" level="project" />
   </component>
 </module>

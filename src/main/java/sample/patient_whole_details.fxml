@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820" prefWidth="600" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientWholeDetails">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820" prefWidth="600" style="-fx-background-color: #fafafa; -fx-border-color: #d4d4d4;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientWholeDetails">
     <children>
         <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="553.0" layoutY="22.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
             <image>
@@ -136,7 +136,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-        <Button layoutX="329.0" layoutY="730.0" minWidth="200.0" mnemonicParsing="false" prefHeight="23.0" onAction="#launchMedicalRecords" prefWidth="200.0" style="-fx-background-color: #3498db;" text="View Medical Records" textFill="WHITE">
+        <Button layoutX="329.0" layoutY="730.0" minWidth="200.0" mnemonicParsing="false" onAction="#launchMedicalRecords" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #3498db;" text="View Medical Records" textFill="WHITE">
         </Button>
     </children>
 </AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apmain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="350" style="-fx-background-color: #fafafa; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.CreateAppointment">
+    <children>
+        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="313.0" layoutY="14.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+            <image>
+                <Image url="@../resources/icons8-delete-filled-24.png" />
+            </image>
+        </ImageView>
+        <Label alignment="CENTER" layoutX="2.0" layoutY="25.0" prefHeight="46.0" prefWidth="322.0" text="Create an Appointment" textFill="#000000">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+
+        <ImageView fitHeight="30.0" fitWidth="37.0" layoutX="275.0" layoutY="33.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/278-Appointment_calendar_time_clock_month_planner_reminder_schedule-512.png" />
+            </image>
+        </ImageView>
+      <JFXDatePicker fx:id="appointdate" editable="false" layoutX="55.0" layoutY="130.0" prefHeight="30.0" prefWidth="250.0" promptText="Date" />
+      <JFXTimePicker fx:id="appointtime" layoutX="55.0" layoutY="170.0" prefHeight="30.0" prefWidth="250.0" promptText="Time" />
+      <Separator layoutX="2.0" layoutY="85.0" prefHeight="11.0" prefWidth="350.0" />
+      <JFXTextArea fx:id="appointreason" focusColor="#009688" layoutX="55.0" layoutY="220.0" prefHeight="90.0" prefWidth="215.0" promptText="Appointment related to?" />
+        <JFXTextField fx:id="appointdoctor" alignment="TOP_LEFT" focusColor="#009688" layoutX="55" layoutY="320" prefHeight="30.0" prefWidth="215" promptText="Doctor" />
+      <Button layoutX="177.0" layoutY="420.0" minWidth="118.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="120.0" onAction="#createAppointment" style="-fx-background-color: #3498db;" text="Create" textFill="WHITE" />
+    </children>
+</AnchorPane>
