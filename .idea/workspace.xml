@@ -2,79 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f53fffe-5417-46e2-84d9-3e88b172ac5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_json.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PatientHealthMonitoringSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PatientHealthMonitoringSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/Creative-Tail-People-add-user.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/Register-Icon-300x245.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/clipboard (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/hospital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/icons8-delete-filled-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/icons8-next-page-64 copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/icons8-next-page-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/icons8-save-as-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/pencil-edit-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/red-30141_640.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/resources/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/AlertHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/GetPatientDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/LoginForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/LoginFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientEditDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientFullDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientRegistration1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientRegistration2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientRegistration3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientRegistrationDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientWholeDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientsList$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/PatientsList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/RegistrationFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/login_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/patient_edit_details.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/patient_list.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/patient_registration1.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/patient_registration2.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/patient_registration3.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/patient_whole_details.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/sample/registration_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Creative-Tail-People-add-user.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Register-Icon-300x245.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/clipboard (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/hospital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/icons8-delete-filled-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/icons8-next-page-64 copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/icons8-next-page-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/icons8-save-as-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pencil-edit-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/red-30141_640.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AlertHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GetPatientDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/LoginForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/LoginFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientEditDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientFullDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientRegistration1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientRegistration2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientRegistration3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientRegistrationDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientWholeDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PatientsList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/RegistrationFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/login_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/patient_edit_details.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/patient_list.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/patient_registration1.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/patient_registration2.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/patient_registration3.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/patient_whole_details.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/registration_form.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/main/java/sample/PatientRegistration3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/main/java/sample/PatientRegistration3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/main/java/sample/PatientsList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/main/java/sample/PatientsList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/main/java/sample/PatientsList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PatientHealthMonitoringSystem/main/java/sample/PatientsList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resources/incrementor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/incrementor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/GetPatientDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/PatientRegistration3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/PatientRegistration3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/PatientWholeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/PatientWholeDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/PatientsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/PatientsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/ShowMedicalRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/ShowMedicalRecords.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,26 +26,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_whole_details.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="275" selection-start-line="11" selection-start-column="275" selection-end-line="11" selection-end-column="275" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/registration_form.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="275" selection-start-line="12" selection-start-column="275" selection-end-line="12" selection-end-column="275" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sample/show_medical_records.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -119,52 +36,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_list.fxml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientRegistration3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="277" selection-start-line="15" selection-start-column="277" selection-end-line="15" selection-end-column="277" />
+            <state relative-caret-position="300">
+              <caret line="62" column="143" selection-start-line="62" selection-start-column="143" selection-end-line="62" selection-end-column="143" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_registration1.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="290" selection-start-line="15" selection-start-column="290" selection-end-line="15" selection-end-column="290" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_registration2.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="275" selection-start-line="12" selection-start-column="275" selection-end-line="12" selection-end-column="275" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_registration3.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="265" lean-forward="true" selection-start-line="15" selection-start-column="265" selection-end-line="15" selection-end-column="275" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientsList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+            <state relative-caret-position="377">
+              <caret line="123" column="11" selection-start-line="102" selection-start-column="8" selection-end-line="123" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3236#3257#0" expanded="true" />
+                <element signature="e#3995#3996#0" expanded="true" />
+                <element signature="e#4060#4061#0" expanded="true" />
                 <element signature="e#3320#3341#0" expanded="true" />
                 <element signature="e#6012#6028#0" expanded="true" />
                 <element signature="e#10507#10523#0" expanded="true" />
@@ -174,23 +66,80 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/login_form.fxml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/AlertHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="210">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/LoginFormController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="86" column="32" lean-forward="true" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/ShowMedicalRecords.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="57" column="73" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientWholeDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_registration3.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-118">
+              <caret line="15" column="265" lean-forward="true" selection-start-line="15" selection-start-column="265" selection-end-line="15" selection-end-column="275" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_edit_details.fxml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/LoginForm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="275" selection-start-line="14" selection-start-column="275" selection-end-line="14" selection-end-column="275" />
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_list.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -200,8 +149,8 @@
       <list>
         <option value="XSLT Stylesheet" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -221,8 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/RegistrationFormController.java" />
-        <option value="$PROJECT_DIR$/src/sample/login_form.fxml" />
         <option value="$PROJECT_DIR$/src/sample/registration_form.fxml" />
         <option value="$PROJECT_DIR$/src/sample/PatientWholeDetails.fxml" />
         <option value="$PROJECT_DIR$/src/sample/LoginFormController.java" />
@@ -249,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/sample/EXAMPLE.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/PatientDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sample/PatientsList.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/AlertHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/GetPatientDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/LoginForm.java" />
@@ -258,20 +204,23 @@
         <option value="$PROJECT_DIR$/src/main/java/sample/PatientFullDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/PatientRegistration1.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/PatientRegistration2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sample/PatientRegistration3.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/PatientRegistrationDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sample/PatientWholeDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/RegistrationFormController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sample/ShowMedicalRecords.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/login_form.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/patient_edit_details.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/sample/patient_list.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/patient_registration1.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/patient_registration2.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/patient_registration3.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/patient_whole_details.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/registration_form.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/show_medical_records.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/sample/patient_list.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/sample/PatientsList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sample/setConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sample/show_record.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/sample/PatientRegistration3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sample/ShowMedicalRecords.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sample/PatientWholeDetails.java" />
       </list>
     </option>
   </component>
@@ -291,10 +240,9 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="638" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="802" />
+    <option name="width" value="924" />
     <option name="height" value="811" />
   </component>
   <component name="ProjectView">
@@ -340,6 +288,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PatientHealthMonitoringSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PatientHealthMonitoringSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,14 +315,6 @@
               <item name="Users" type="462c0819:PsiDirectoryNode" />
               <item name="utkarsh" type="462c0819:PsiDirectoryNode" />
               <item name="MedicalRecords" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PatientHealthMonitoringSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PatientHealthMonitoringSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Users" type="462c0819:PsiDirectoryNode" />
-              <item name="utkarsh" type="462c0819:PsiDirectoryNode" />
-              <item name="MedicalRecords" type="462c0819:PsiDirectoryNode" />
-              <item name="patientID_1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PatientHealthMonitoringSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -441,10 +389,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="924" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21316166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33786848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -453,7 +401,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.29759037" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.29624477" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -508,11 +456,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/iconfinder_handrawn_Add_Plus_Doodle_436170.png" />
-    <entry file="file://$PROJECT_DIR$/src/resources/hospital_icon.png" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/Creative-Tail-People-add-user.svg.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -599,30 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/AlertHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/GetPatientDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/LoginFormController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientDetails.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -677,16 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientRegistration3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientRegistrationDetails.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -700,55 +609,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientWholeDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/RegistrationFormController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="18" selection-start-column="18" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/ShowMedicalRecords.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/LoginForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3320#3341#0" expanded="true" />
-            <element signature="e#6012#6028#0" expanded="true" />
-            <element signature="e#10507#10523#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -769,14 +635,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_list.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="277" selection-start-line="15" selection-start-column="277" selection-end-line="15" selection-end-column="277" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_registration1.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -789,14 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="275" selection-start-line="12" selection-start-column="275" selection-end-line="12" selection-end-column="275" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_registration3.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="265" lean-forward="true" selection-start-line="15" selection-start-column="265" selection-end-line="15" selection-end-column="275" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -824,6 +674,124 @@
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_list.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/GetPatientDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/AlertHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/LoginForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/setConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/show_record.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/ShowRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/LoginFormController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="86" column="32" lean-forward="true" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientsList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="123" column="11" selection-start-line="102" selection-start-column="8" selection-end-line="123" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3257#0" expanded="true" />
+            <element signature="e#3995#3996#0" expanded="true" />
+            <element signature="e#4060#4061#0" expanded="true" />
+            <element signature="e#3320#3341#0" expanded="true" />
+            <element signature="e#6012#6028#0" expanded="true" />
+            <element signature="e#10507#10523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/patient_registration3.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="15" column="265" lean-forward="true" selection-start-line="15" selection-start-column="265" selection-end-line="15" selection-end-column="275" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientRegistration3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="62" column="143" selection-start-line="62" selection-start-column="143" selection-end-line="62" selection-end-column="143" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/ShowMedicalRecords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="57" column="73" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/PatientWholeDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

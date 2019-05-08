@@ -8,8 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
@@ -72,6 +72,34 @@ public class PatientsList implements Initializable {
         Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
         tablepatient.getItems().setAll(parseUserList());
+        MenuItem item1 = new MenuItem("View Details");
+        item1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                try {
+                    Stage stage = (Stage) rootpane.getScene().getWindow();
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_whole_details.fxml"));
+                    PatientWholeDetails controller = fxmlLoader.<PatientWholeDetails>getController();
+                    controller.setID(tablepatient.getSelectionModel().getSelectedItem().getID());
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage newWindow = new Stage();
+                    newWindow.initStyle(StageStyle.TRANSPARENT);
+                    newWindow.setScene(scene);
+                    newWindow.initModality(Modality.WINDOW_MODAL);
+                    newWindow.initOwner(stage);
+                    newWindow.show();
+                } catch (Exception ex) {
+
+                }
+            }
+        });
+        MenuItem item2 = new MenuItem("Create an Appointment");
+        item2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                System.out.println("Preferences");
+            }
+        });
+        final ContextMenu contextMenu = new ContextMenu(item1, item2);
+        tablepatient.setContextMenu(contextMenu);
         tablepatient.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

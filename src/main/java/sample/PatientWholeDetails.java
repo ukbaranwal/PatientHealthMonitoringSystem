@@ -120,6 +120,7 @@ public class PatientWholeDetails implements Initializable {
             Stage newWindow = new Stage();
             newWindow.setScene(scene);
             newWindow.initModality(Modality.WINDOW_MODAL);
+            newWindow.resizableProperty().setValue(Boolean.FALSE);
             newWindow.initOwner(stage);
             newWindow.show();
         } catch (Exception e) {

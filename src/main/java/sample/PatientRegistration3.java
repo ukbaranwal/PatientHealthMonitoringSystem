@@ -57,10 +57,10 @@ public class PatientRegistration3 {
 //            ResultSet rs = stmt2.executeQuery(sql2);
 //            rs.next();
 //            ID = rs.getInt("AUTO_INCREMENT");
-            BufferedReader in = new BufferedReader(new FileReader("/Users/utkarsh/Desktop/github/PatientHealthMonitoringSystem/src/resources/incrementor.txt"));
+            BufferedReader in = new BufferedReader(new FileReader("/Users/utkarsh/Desktop/github/PatientHealthMonitoringSystem/src/main/java/resources/incrementor.txt"));
             ID = Integer.parseInt(in.readLine());
             System.out.println(ID);
-            PrintStream pout = new PrintStream(new FileOutputStream("/Users/utkarsh/Desktop/github/PatientHealthMonitoringSystem/src/resources/incrementor.txt"));
+            PrintStream pout = new PrintStream(new FileOutputStream("/Users/utkarsh/Desktop/github/PatientHealthMonitoringSystem/src/main/java/resources/incrementor.txt"));
             pout.println(ID+1);
             try {
                 File dir = new File(PATH + "patientID_" + ID);
