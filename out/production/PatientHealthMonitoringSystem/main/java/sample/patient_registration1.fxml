@@ -104,7 +104,7 @@
             <ColorAdjust contrast="0.1" />
          </effect>
         </TextField>
-        <TextField fx:id="patients_height" layoutX="75.0" layoutY="455.0" prefHeight="33.0" prefWidth="300.0" promptText="Height" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
+        <TextField fx:id="patients_height" layoutX="75.0" layoutY="455.0" prefHeight="33.0" prefWidth="300.0" promptText="Height (in cms)" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
             <font>
                 <Font name="Arial" size="13.0" />
             </font>
@@ -112,7 +112,7 @@
             <ColorAdjust contrast="0.1" />
          </effect>
         </TextField>
-        <TextField fx:id="patients_weight" layoutX="75.0" layoutY="495.0" prefHeight="33.0" prefWidth="300.0" promptText="Weight" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
+        <TextField fx:id="patients_weight" layoutX="75.0" layoutY="495.0" prefHeight="33.0" prefWidth="300.0" promptText="Weight (in kgs)" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
             <font>
             <Font name="Arial" size="13.0" />
             </font>

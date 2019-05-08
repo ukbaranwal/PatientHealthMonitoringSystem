@@ -250,6 +250,7 @@ public class PatientEditDetails implements Initializable {
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+            stage = new Stage();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));
             stage.setScene(scene);
             stage.show();

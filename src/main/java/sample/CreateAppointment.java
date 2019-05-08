@@ -32,7 +32,7 @@ public class CreateAppointment {
     @FXML
     private JFXTextField appointdoctor;
     public static int ID;
-    public static String name, contact;
+    public static String name, contact, father;
     public static final String ACCOUNT_SID = "AC304fa123df9a164738a7ee9799e667d3";
     public static final String AUTH_TOKEN = "c937ae9bb30217f676604bc79fc04d23";
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -63,6 +63,14 @@ public class CreateAppointment {
         CreateAppointment.contact = contact;
     }
 
+    public static String getFather() {
+        return father;
+    }
+
+    public static void setFather(String father) {
+        CreateAppointment.father = father;
+    }
+
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
         Window owner = ((Node)event.getTarget()).getScene().getWindow();
@@ -75,10 +83,10 @@ public class CreateAppointment {
         LocalDate localdate = appointdate.getValue();
         LocalTime localtime = appointtime.getValue();
         String b = appointdoctor.getText().toString();
-        submit(a,localdate.toString(),localtime.toString(),b);
         String message = "Hey "+name+",\n"+"Your appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
-//        sendMessage(contact,message);
-        System.out.println(message);
+        submit(a,localdate.getDayOfMonth()+" "+localdate.getMonth().toString(),localtime.toString(),b, message);
+        sendMessage(contact,message);
+//        System.out.println(message);
         Alert alert = new Alert(Alert.AlertType.INFORMATION, "Appointment Scheduled");
         alert.showAndWait();
         Node node = (Node)event.getSource();
@@ -89,8 +97,9 @@ public class CreateAppointment {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(new com.twilio.type.PhoneNumber("+91"+mobile), new com.twilio.type.PhoneNumber("+18577633571"),
                 msg).create();
+        System.out.println(message.getSid());
     }
-    public void submit(String a, String b, String c, String d){
+    public void submit(String a, String b, String c, String d, String e){
         Connection con = null;
         Statement stmt = null;
         Statement stmt2 = null;
@@ -98,7 +107,7 @@ public class CreateAppointment {
             Class.forName(JDBC_DRIVER);
             con = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = con.createStatement();
-            String sql = "INSERT INTO appointments " + "VALUES(0,'"+ID+"','"+name+"','"+contact+"','"+a+"','"+b+"','"+c+"','"+d+"')";
+            String sql = "INSERT INTO appointments " + "VALUES(0,'"+ID+"','"+name+"','"+father+"','"+contact+"','"+a+"','"+b+"','"+c+"','"+d+"','"+2+"','"+e+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             //Handle errors for JDBC
@@ -121,4 +130,5 @@ public class CreateAppointment {
             }
         }
     }
+
 }

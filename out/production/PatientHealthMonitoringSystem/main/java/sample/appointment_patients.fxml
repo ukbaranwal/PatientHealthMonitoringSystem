@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="appointmentpane" prefHeight="1000.0" prefWidth="1440.0" style="-fx-background-color: #43bb73;" stylesheets="@../resources/style.css" StackPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.AppointmentPatients">
+    <ImageView fitHeight="22.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="0">
+        <image>
+            <Image url="@../resources/red-30141_640.png" />
+        </image>
+    </ImageView>
+    <Label alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="37.0" prefWidth="314.0" style="-fx-text-transform: uppercase;" styleClass="title-label" text="ANSH NEURO CLINIC" textAlignment="CENTER" textFill="WHITE" underline="true" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+        <font>
+            <Font name="Chalkboard Bold" size="28.0" />
+        </font></Label>
+    <Label alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="28.0" prefWidth="314.0" style="-fx-text-transform: uppercase;" styleClass="title-label" text="Appointments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+        <font>
+            <Font name="Chalkboard Bold" size="18.0" />
+        </font></Label>
+    <ImageView fitHeight="22.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+        <image>
+            <Image url="@../resources/red-30141_640.png" />
+        </image>
+    </ImageView>
+    <Button minWidth="308.0" mnemonicParsing="false" onAction="#launchPatientsPage" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="SHOW PATIENTS DETAILS" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Button alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    </Button>
+
+    <TextField fx:id="searchID" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnID" prefHeight="45.0" prefWidth="204.0" promptText="Search by ID..." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    </TextField>
+    <TextField fx:id="searchName" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnName" prefHeight="45.0" prefWidth="204.0" promptText="Search by Name..." GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    </TextField>
+    <TextField fx:id="searchFather" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnFather" prefHeight="45.0" prefWidth="204.0" promptText="Search by Father's Name..." GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    </TextField>
+    <TextField fx:id="searchMobile" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnMobile" prefHeight="45.0" prefWidth="204.0" promptText="Search by Mobile no..." GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    </TextField>
+    <TextField fx:id="searchDate" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnDate" prefHeight="45.0" prefWidth="204.0" promptText="Search by Date..." GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    </TextField>
+    <TableView fx:id="tablepatientappointment" prefHeight="381.0" prefWidth="1440.0" GridPane.columnIndex="0" GridPane.columnSpan="7" GridPane.rowIndex="2">
+        <columns>
+            <TableColumn fx:id="NO" prefWidth="65.00001525878906" styleClass="" text="No." />
+            <TableColumn fx:id="ID" prefWidth="79.99996948242188" text="ID" />
+            <TableColumn fx:id="Name" prefWidth="229.0" text="Name" />
+            <TableColumn fx:id="Father" minWidth="3.0" prefWidth="201.0" text="Father's Name" />
+            <TableColumn fx:id="Mobile" prefWidth="141.0" text="Contact no." />
+            <TableColumn fx:id="Reason" prefWidth="284.0" text="Reason" />
+            <TableColumn fx:id="Dateappointment" prefWidth="119.0" text="Date" />
+            <TableColumn fx:id="Timeappointment" minWidth="0.0" prefWidth="133.0" text="Time" />
+            <TableColumn fx:id="Doctor" prefWidth="186.0" text="Doctor " />
+        </columns>
+    </TableView>
+    <columnConstraints>
+        <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
+        <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
+        <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
+        <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
+        <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
+        <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />
+        <ColumnConstraints maxWidth="210.0" minWidth="162.0" prefWidth="210.0" />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="200.0" minHeight="60.0" prefHeight="87.0" />
+        <RowConstraints maxHeight="200.0" minHeight="18.0" prefHeight="45.0" />
+        <RowConstraints maxHeight="705.0" minHeight="500.0" prefHeight="676.0" />
+    </rowConstraints>
+</GridPane>

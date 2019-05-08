@@ -102,6 +102,7 @@ public class PatientList implements Initializable {
                     controller.setID(tablepatient.getSelectionModel().getSelectedItem().getID());
                     controller.setName(tablepatient.getSelectionModel().getSelectedItem().getName());
                     controller.setContact(tablepatient.getSelectionModel().getSelectedItem().getMobile());
+                    controller.setFather(tablepatient.getSelectionModel().getSelectedItem().getFather());
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage newWindow = new Stage();
                     newWindow.initStyle(StageStyle.TRANSPARENT);
@@ -318,6 +319,23 @@ public class PatientList implements Initializable {
             newWindow.initModality(Modality.WINDOW_MODAL);
             newWindow.initOwner(stage);
             newWindow.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    protected void launchAppointmentsPage(ActionEvent event){
+        try {
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("appointment_patients.fxml")));
+            stage.close();
+//            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+//            stage.initModality(Modality.WINDOW_MODAL);
+//            stage.initOwner(stage);
+            stage.show();
 
         } catch (Exception e) {
             e.printStackTrace();

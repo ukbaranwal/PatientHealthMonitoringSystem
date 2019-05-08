@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apmain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680" prefWidth="450" style="-fx-background-color: #fafafa; -fx-border-color: #4d4d4d;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientRegistration1">
+<AnchorPane fx:id="apmain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680" prefWidth="450" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientRegistration1">
     <children>
         <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="410.0" layoutY="18.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
             <image>
@@ -104,7 +104,7 @@
             <ColorAdjust contrast="0.1" />
          </effect>
         </TextField>
-        <TextField fx:id="patients_height" layoutX="75.0" layoutY="455.0" prefHeight="33.0" prefWidth="300.0" promptText="Height" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
+        <TextField fx:id="patients_height" layoutX="75.0" layoutY="455.0" prefHeight="33.0" prefWidth="300.0" promptText="Height (in cms)" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
             <font>
                 <Font name="Arial" size="13.0" />
             </font>
@@ -112,7 +112,7 @@
             <ColorAdjust contrast="0.1" />
          </effect>
         </TextField>
-        <TextField fx:id="patients_weight" layoutX="75.0" layoutY="495.0" prefHeight="33.0" prefWidth="300.0" promptText="Weight" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
+        <TextField fx:id="patients_weight" layoutX="75.0" layoutY="495.0" prefHeight="33.0" prefWidth="300.0" promptText="Weight (in kgs)" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;">
             <font>
             <Font name="Arial" size="13.0" />
             </font>
