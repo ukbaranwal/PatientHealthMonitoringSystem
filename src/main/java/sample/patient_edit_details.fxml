@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820" prefWidth="600" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientEditDetails">
+    <children>
+        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="553.0" layoutY="22.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+            <image>
+                <Image url="@../resources/icons8-delete-filled-24.png" />
+            </image>
+        </ImageView>
+        <JFXTextField fx:id="patients_ename" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="90.0" prefHeight="23.0" prefWidth="200.0" promptText="Name" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_efather" alignment="BASELINE_LEFT" labelFloat="true" layoutX="330.0" layoutY="90.0" prefHeight="23.0" prefWidth="200.0" promptText="Father's Name" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_edob" labelFloat="true" layoutX="60.0" layoutY="130" prefHeight="23.0" prefWidth="200.0" promptText="Birth Date" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXComboBox fx:id="patients_egender" labelFloat="true" layoutX="330.0" layoutY="130.0" prefHeight="23.0" prefWidth="200.0" promptText="Gender" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Male" />
+                    <String fx:value="Female" />
+                    <String fx:value="Others" />
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+        <JFXTextField fx:id="patients_econtact" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="170.0" prefHeight="23.0" prefWidth="200.0" promptText="Contact" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_eemail" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="330.0" layoutY="170.0" prefHeight="23.0" prefWidth="200.0" promptText="Email ID" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_eaddress" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="210.0" prefHeight="23.0" prefWidth="200.0" promptText="Address" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_eblood" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="330.0" layoutY="210.0" prefHeight="23.0" prefWidth="200.0" promptText="Blood Group" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_emarital" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="250.0" prefHeight="23.0" prefWidth="200.0" promptText="Marital Status" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_eheight" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="330.0" layoutY="250.0" prefHeight="23.0" prefWidth="200.0" promptText="Height" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_eweight" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="290.0" prefHeight="23.0" prefWidth="200.0" promptText="Weight" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_eemergency" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="330.0" layoutY="290.0" prefHeight="23.0" prefWidth="200.0" promptText="Emergency Contact" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_eallergy" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="410.0" prefHeight="23.0" prefWidth="470.0" promptText="Allergies" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_ecurmedi" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="330.0" prefHeight="23.0" prefWidth="470.0" promptText="Current Medications" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_epastmedi" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="370.0" prefHeight="23.0" prefWidth="470.0" promptText="Past Medications" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_echronic" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="450.0" prefHeight="23.0" prefWidth="470.0" promptText="Chronic Diseases" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_einjury" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="490.0" prefHeight="23.0" prefWidth="470.0" promptText="Past Injuries" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="patients_esurgery" alignment="BOTTOM_LEFT" labelFloat="true" layoutX="60.0" layoutY="530.0" prefHeight="23.0" prefWidth="470.0" promptText="Surgeries" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXComboBox fx:id="patients_ecigar" labelFloat="true" layoutX="60.0" layoutY="570.0" prefHeight="23.0" prefWidth="200.0" promptText="Cigarette Consumption" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="No Smoking" />
+                    <String fx:value="Used to, but quit" />
+                    <String fx:value="1-2/day" />
+                    <String fx:value="3-5/day" />
+                    <String fx:value="5-10/day" />
+                    <String fx:value="More than 10/day" />
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+        <JFXComboBox fx:id="patients_ealco" labelFloat="true" layoutX="60.0" layoutY="610.0" prefHeight="23.0" prefWidth="200.0" promptText="Alcohol Consumption" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Non-Drinker" />
+                    <String fx:value="Rarely" />
+                    <String fx:value="Socially" />
+                    <String fx:value="Regularly" />
+                    <String fx:value="Heavily" />
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+        <JFXComboBox fx:id="patients_eactivity" labelFloat="true" layoutX="60.0" layoutY="650.0" prefHeight="23.0" prefWidth="200.0" promptText="Activity Level" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Sedentary(Low)" />
+                    <String fx:value="Moderately(Normal)" />
+                    <String fx:value="Active(High)" />
+                    <String fx:value="Athletic(Very High)" />
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+        <JFXComboBox fx:id="patients_efood" labelFloat="true" layoutX="60.0" layoutY="690.0" prefHeight="23.0" prefWidth="200.0" promptText="Food Preference" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Vegetarian" />
+                    <String fx:value="Non-Vegetarian" />
+                    <String fx:value="Eggetarian" />
+                    <String fx:value="Vegan" />
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+        <JFXComboBox fx:id="patients_eprofession" labelFloat="true" layoutX="60.0" layoutY="730.0" prefHeight="23.0" prefWidth="200.0" promptText="Profession" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="IT Professional" />
+                    <String fx:value="Medical Profession" />
+                    <String fx:value="Banking Profession" />
+                    <String fx:value="Education Related" />
+                    <String fx:value="Student" />
+                    <String fx:value="Homemaker" />
+                    <String fx:value="others" />
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+        <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="515.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="530.0" layoutY="25.5" onMouseClicked="#saveDetails" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/icons8-save-as-52.png" />
+            </image>
+        </ImageView>
+        <JFXTextArea fx:id="patients_eextra" labelFloat="true" layoutX="329.0" layoutY="569.0" prefHeight="147.0" prefWidth="200.0" promptText="Extra Details" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #d4d4d4;" unFocusColor="#d4d4d4" wrapText="true" />
+        <Label fx:id="patients_eid" alignment="CENTER" layoutX="58.0" layoutY="39.0" opacity="0.5" prefHeight="30.0" prefWidth="470.0" text="Label" textAlignment="CENTER">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="329.0" layoutY="730.0" minWidth="200.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #3498db;" text="View Medical Records" textFill="WHITE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" />
+
+    </children>
+</AnchorPane>

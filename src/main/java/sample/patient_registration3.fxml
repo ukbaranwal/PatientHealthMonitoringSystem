@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680" prefWidth="450" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientRegistration3">
+    <children>
+        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="410.0" layoutY="18.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+            <image>
+                <Image url="@../resources/icons8-delete-filled-24.png" />
+            </image>
+        </ImageView>
+        <Label alignment="CENTER" layoutX="36.0" layoutY="30.0" prefHeight="46.0" prefWidth="384.0" text="Enter Patient Details" textFill="#000000">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="30.0" layoutY="50.0" prefHeight="46.0" prefWidth="390.0" text="(Lifestyle)" textFill="#000000">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="46.0" fitWidth="42.0" layoutX="325.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/clipboard%20(1).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="45.0" layoutY="590.0">
+            <image>
+                <Image url="@../resources/icons8-next-page-64%20copy.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="submitPatient" layoutX="260.0" layoutY="593.0" minWidth="150.0" mnemonicParsing="false" onAction="#submitForm" prefHeight="41.0" prefWidth="150.0" style="-fx-background-radius: 5; -fx-background-color: #3498db;" text="Submit Details" textFill="WHITE">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Button>
+        <ComboBox fx:id="patient_cigar" layoutX="75.0" layoutY="130.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="No Smoking" />
+                    <String fx:value="Used to, but quit" />
+                    <String fx:value="1-2/day" />
+                    <String fx:value="3-5/day" />
+                    <String fx:value="5-10/day" />
+                    <String fx:value="More than 10/day" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Cigarette Consumption" />
+            </value>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </ComboBox>
+        <ComboBox fx:id="patient_alco" layoutX="75.0" layoutY="180.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Non-Drinker" />
+                    <String fx:value="Rarely" />
+                    <String fx:value="Socially" />
+                    <String fx:value="Regularly" />
+                    <String fx:value="Heavily" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Alcohol Consumption" />
+            </value>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </ComboBox>
+        <ComboBox fx:id="patient_activity" layoutX="75.0" layoutY="230.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Sedentary(Low)" />
+                    <String fx:value="Moderately(Normal)" />
+                    <String fx:value="Active(High)" />
+                    <String fx:value="Athletic(Very High)" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Activity Level" />
+            </value>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </ComboBox>
+        <ComboBox fx:id="patient_food" layoutX="75.0" layoutY="280.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Vegetarian" />
+                    <String fx:value="Non-Vegetarian" />
+                    <String fx:value="Eggetarian" />
+                    <String fx:value="Vegan" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Food Preference" />
+            </value>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </ComboBox>
+        <ComboBox fx:id="patient_profession" layoutX="75.0" layoutY="330.0" opacity="0.8" prefHeight="33.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="IT Professional" />
+                    <String fx:value="Medical Profession" />
+                    <String fx:value="Banking Profession" />
+                    <String fx:value="Education Related" />
+                    <String fx:value="Student" />
+                    <String fx:value="Homemaker" />
+                    <String fx:value="others" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Profession" />
+            </value>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </ComboBox>
+        <TextArea fx:id="patient_extra" layoutX="75.0" layoutY="380.0" prefHeight="100.0" prefWidth="300.0" promptText="Extra Details" style="-fx-text-fill: BLACK; -fx-prompt-text-fill: #5b5b5b;" wrapText="true">
+         <effect>
+            <ColorAdjust contrast="0.1" />
+         </effect></TextArea>
+      <Button layoutX="75.0" layoutY="495.0" mnemonicParsing="false" onAction="#addMedicalRecords" prefHeight="41.0" prefWidth="300.0" text="Add Medical Record">
+         <effect>
+            <ColorAdjust contrast="0.1" />
+         </effect></Button>
+      <Label fx:id="recordconfirm" alignment="CENTER_RIGHT" layoutX="225.0" layoutY="539.0" prefHeight="23.0" prefWidth="150.0" textFill="#04a121">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+    </children>
+</AnchorPane>

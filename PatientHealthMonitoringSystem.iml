@@ -10,5 +10,6 @@
     <orderEntry type="library" name="mysql-connector-java-5.1.47-bin" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
     <orderEntry type="library" name="controlsfx-8.40.15" level="project" />
+    <orderEntry type="library" name="org.json" level="project" />
   </component>
 </module>
