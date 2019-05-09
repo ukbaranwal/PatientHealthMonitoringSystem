@@ -20,7 +20,7 @@
             <Image url="@../resources/red-30141_640.png" />
         </image>
     </ImageView>
-    <Label fx:id="hospitalname" alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="37.0" prefWidth="314.0" style="-fx-text-transform: uppercase;" styleClass="title-label" textAlignment="CENTER" textFill="WHITE" underline="true" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+    <Label fx:id="hospitalname" alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="37.0" prefWidth="563.0" style="-fx-text-transform: uppercase;" styleClass="title-label" textAlignment="CENTER" textFill="WHITE" underline="true" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
         <font>
             <Font name="Chalkboard Bold" size="28.0" />
         </font></Label>
@@ -33,8 +33,8 @@
             <Image url="@../resources/red-30141_640.png" />
         </image>
     </ImageView>
-    <Button minWidth="308.0" mnemonicParsing="false" onAction="#launchPatientsPage" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="SHOW PATIENTS DETAILS" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <Button alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#sendreminders" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    <Button fx:id="btn_detail" minWidth="308.0" mnemonicParsing="false" onAction="#launchPatientsPage" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="SHOW PATIENTS DETAILS" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Button fx:id="btn_reminders" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#sendreminders" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
     </Button>
 
     <TextField fx:id="searchID" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnID" prefHeight="45.0" prefWidth="204.0" promptText="Search by ID..." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
@@ -60,7 +60,7 @@
             <TableColumn fx:id="Doctor" prefWidth="186.0" text="Doctor " />
         </columns>
     </TableView>
-   <Button alignment="CENTER" contentDisplay="CENTER" layoutX="1329.0" layoutY="67.0" minWidth="100.0" mnemonicParsing="false" onAction="#launchArchivedAppointments" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Archived Appointments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+   <Button fx:id="btn_archive" alignment="CENTER" contentDisplay="CENTER" layoutX="1329.0" layoutY="67.0" minWidth="100.0" mnemonicParsing="false" onAction="#launchArchivedAppointments" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Archived Appointments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
       <GridPane.margin>
          <Insets right="124.0" />
       </GridPane.margin></Button>

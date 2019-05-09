@@ -8,24 +8,33 @@ import com.twilio.Twilio;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.twilio.rest.api.v2010.account.Message;
 
 import java.io.*;
+import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ResourceBundle;
 
-public class PatientRating{
+public class PatientRating implements Initializable {
     @FXML
     private JFXTextArea remarks;
     @FXML
     private JFXTextField ratings;
+    @FXML
+    private ImageView img;
+    @FXML
+    private Button btn;
     public static int NO, ID;
     public static String name, contact, father, reason, date, time, doctor;
     public static int getID() {
@@ -223,5 +232,11 @@ public class PatientRating{
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(img);
+        Utilities.buttonEffect(btn);
     }
 }

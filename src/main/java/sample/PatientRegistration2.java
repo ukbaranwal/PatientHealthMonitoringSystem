@@ -22,9 +22,9 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.ResourceBundle;
 
-public class PatientRegistration2 {
+public class PatientRegistration2 implements Initializable{
     @FXML
-    private ImageView Bthirdpage;
+    private ImageView img, img2, img1;
     @FXML
     private TextField patients_curmedi, patients_pastmedi;
     @FXML
@@ -84,5 +84,12 @@ public class PatientRegistration2 {
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(img);
+        Utilities.cursorEffect(img1);
+        Utilities.cursorEffect(img2);
     }
 }

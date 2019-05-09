@@ -2,33 +2,47 @@ package main.java.sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import java.io.*;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class PatientRegistration3 {
+public class PatientRegistration3 implements Initializable {
     @FXML
     private ComboBox patient_cigar, patient_alco, patient_activity, patient_food, patient_profession;
     @FXML
     private TextArea patient_extra;
     @FXML
     private Label recordconfirm;
+    @FXML
+    private ImageView img, img2;
     private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x, y;
     private static Integer j, k, ID;
     static final String PATH = "/Users/utkarsh/MedicalRecords/";
     @FXML
     private Button submitPatient;
     List<File> list = null;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(submitPatient);
+        Utilities.buttonEffect(img);
+        Utilities.cursorEffect(img2);
+    }
+
     public void submit(String a, String b, String c, String d, String e, String f, String g, String h, String i, Integer j, Integer k, String l, String m, String n, String o, String p, String q, String r, String s, String t, String u, String v, String w, String x) {
         Statement stmt = null;
         Statement stmt2 = null;

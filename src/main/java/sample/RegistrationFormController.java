@@ -1,9 +1,14 @@
 package main.java.sample;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
+
+import com.sun.org.apache.xml.internal.security.Init;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -15,13 +20,15 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-public class RegistrationFormController {
+public class RegistrationFormController implements Initializable {
     @FXML
     private TextField nameField, address, doctor, userid;
     @FXML
     private PasswordField passwordField, confirmField;
     @FXML
-    private Button submitButton;
+    private Circle min, close;
+    @FXML
+    private Button submitButton, loginbutton;
     public void register(String a, String b, String c, String d, String e) {
         Connection con = null;
         Statement stmt = null;
@@ -51,6 +58,15 @@ public class RegistrationFormController {
             }
         }
     }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(submitButton);
+        Utilities.buttonEffect(min);
+        Utilities.buttonEffect(close);
+        Utilities.cursorEffect(loginbutton);
+    }
+
     @FXML
     protected void handleSubmitButtonAction (ActionEvent event){
         Window owner = submitButton.getScene().getWindow();

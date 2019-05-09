@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820" prefWidth="600" style="-fx-background-color: #fafafa; -fx-border-color: #d4d4d4;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientEditDetails">
     <children>
-        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="553.0" layoutY="22.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+        <ImageView fx:id="img2" fitHeight="40.0" fitWidth="23.0" layoutX="553.0" layoutY="22.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
             <image>
                 <Image url="@../resources/icons8-delete-filled-24.png" />
             </image>
@@ -170,7 +170,7 @@
             </items>
         </JFXComboBox>
         <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="515.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
-        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="530.0" layoutY="25.5" onMouseClicked="#saveDetails" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="img1" fitHeight="17.0" fitWidth="17.0" layoutX="530.0" layoutY="25.5" onMouseClicked="#saveDetails" opacity="0.4" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../resources/icons8-save-as-52.png" />
             </image>
@@ -181,7 +181,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button layoutX="329.0" layoutY="730.0" minWidth="200.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #3498db;" onAction="#launchMedicalRecords" text="Edit Medical Records" textFill="WHITE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" />
+        <Button fx:id="btn" layoutX="329.0" layoutY="730.0" minWidth="200.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #3498db;" onAction="#launchMedicalRecords" text="Edit Medical Records" textFill="WHITE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" />
 
     </children>
 </AnchorPane>

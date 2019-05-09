@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -22,6 +23,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -31,6 +33,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
+@SuppressWarnings("checked")
 public class PatientList implements Initializable {
 
     @FXML
@@ -43,7 +46,10 @@ public class PatientList implements Initializable {
     private GridPane rootpane;
     @FXML
     private Label hospitalname;
+    @FXML
     private TextField searchName, searchID, searchFather, searchMobile, searchBlood;
+    @FXML
+    private Button btn_newpatient, btn_reminder, btn_appoint;
     private static String searchFlag;
     private static String searchWord;
 
@@ -66,7 +72,11 @@ public class PatientList implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         hospitalname.setText(Utilities.HOSPITAL);
+
         fillTables();
+        Utilities.buttonEffect(btn_newpatient);
+        Utilities.buttonEffect(btn_reminder);
+        Utilities.buttonEffect(btn_appoint);
         tablepatient.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
@@ -198,6 +208,7 @@ public class PatientList implements Initializable {
     @FXML
     protected void searchBasedOnID(ActionEvent event) {
         if (searchID.getText().isEmpty()) {
+            System.out.println(searchID.getText());
             populateTable();
         } else {
             setSearchWord(searchID.getText().toString());
@@ -313,7 +324,12 @@ public class PatientList implements Initializable {
     protected void sendreminders(ActionEvent event){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate localDate = LocalDate.now();
-        String date = localDate.getDayOfMonth()+" "+localDate.getMonth();
+//        String date = localDate.getDayOfMonth()+" "+localDate.getMonth();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to send reminders to the patients having today's appointment", ButtonType.CANCEL, ButtonType.YES);
+        if(alert.getResult()==ButtonType.CANCEL){
+            return;
+        }
+        alert.showAndWait();
         List<PatientAppointmentDetails> list = new ArrayList<PatientAppointmentDetails>();
         try {
             Connection conn = null;
@@ -321,7 +337,7 @@ public class PatientList implements Initializable {
             PatientAppointmentDetails pd = null;
             conn = Utilities.getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT * from appointments where appointdate='" +date+ "';";
+            String sql = "SELECT * from appointments where appointdate='" +localDate.toString()+ "';";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
 //                pd = new PatientAppointmentDetails(rs.getString("contact"), rs.getString("message"));
@@ -346,4 +362,5 @@ public class PatientList implements Initializable {
         Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
     }
+
 }

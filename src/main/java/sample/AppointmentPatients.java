@@ -1,5 +1,4 @@
 package main.java.sample;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,10 +13,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -39,22 +36,24 @@ public class AppointmentPatients implements Initializable {
     private TextField searchName, searchID, searchFather, searchMobile, searchDate;
     @FXML
     private Label hospitalname;
+    @FXML
+    private Button btn_archive, btn_detail, btn_reminders;
     private static String searchFlag;
     private static String searchWord;
 
-    public static String getSearchWord() {
+    private static String getSearchWord() {
         return searchWord;
     }
 
-    public static void setSearchWord(String searchWord) {
+    private static void setSearchWord(String searchWord) {
         AppointmentPatients.searchWord = searchWord;
     }
 
-    public static String getSearchFlag() {
+    private static String getSearchFlag() {
         return searchFlag;
     }
 
-    public static void setSearchFlag(String searchFlag) {
+    private static void setSearchFlag(String searchFlag) {
         AppointmentPatients.searchFlag = searchFlag;
     }
 
@@ -62,6 +61,9 @@ public class AppointmentPatients implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hospitalname.setText(Utilities.HOSPITAL);
         fillTables();
+        Utilities.buttonEffect(btn_archive);
+        Utilities.buttonEffect(btn_detail);
+        Utilities.buttonEffect(btn_reminders);
         tablepatientappointment.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
@@ -139,13 +141,13 @@ public class AppointmentPatients implements Initializable {
     }
 
     @FXML
-    public void repopulateTable() {
+    private void repopulateTable() {
         fillTables();
         tablepatientappointment.getItems().setAll(searchUserList());
     }
 
     @FXML
-    public void populateTable() {
+    private void populateTable() {
         fillTables();
         tablepatientappointment.getItems().setAll(parseUserList());
     }
@@ -285,7 +287,11 @@ public class AppointmentPatients implements Initializable {
     protected void sendreminders(ActionEvent event){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate localDate = LocalDate.now();
-        String date = localDate.getDayOfMonth()+" "+localDate.getMonth();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to send reminders to the patients having today's appointment", ButtonType.CANCEL, ButtonType.YES);
+        if(alert.getResult()==ButtonType.CANCEL){
+            return;
+        }
+        alert.showAndWait();
         List<PatientAppointmentDetails> list = new ArrayList<PatientAppointmentDetails>();
         try {
             Connection conn = null;
@@ -293,7 +299,7 @@ public class AppointmentPatients implements Initializable {
             PatientAppointmentDetails pd = null;
             conn = Utilities.getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT * from appointments where appointdate='" +date+ "';";
+            String sql = "SELECT * from appointments where appointdate='" +localDate.toString()+ "';";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 CreateAppointment.sendMessage(rs.getString("contact"),rs.getString("message"));

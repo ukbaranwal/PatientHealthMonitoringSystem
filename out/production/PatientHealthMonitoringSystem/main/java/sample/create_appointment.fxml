@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="apmain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="350" style="-fx-background-color: #fafafa; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.CreateAppointment">
     <children>
-        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="313.0" layoutY="14.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+        <ImageView fx:id="img" fitHeight="40.0" fitWidth="23.0" layoutX="313.0" layoutY="14.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
             <image>
                 <Image url="@../resources/icons8-delete-filled-24.png" />
             </image>
@@ -35,6 +35,6 @@
       <Separator layoutX="2.0" layoutY="85.0" prefHeight="11.0" prefWidth="350.0" />
       <JFXTextArea fx:id="appointreason" focusColor="#009688" layoutX="55.0" layoutY="220.0" prefHeight="90.0" prefWidth="215.0" promptText="Appointment related to?" style="-fx-text-fill: black;" />
         <JFXTextField fx:id="appointdoctor" alignment="TOP_LEFT" focusColor="#009688" layoutX="55" layoutY="320" prefHeight="30.0" prefWidth="215" promptText="Doctor" />
-      <Button layoutX="177.0" layoutY="420.0" minWidth="118.0" mnemonicParsing="false" onAction="#createAppointment" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: #3498db;" text="Create" textFill="WHITE" />
+      <Button fx:id="btn" layoutX="177.0" layoutY="420.0" minWidth="118.0" mnemonicParsing="false" onAction="#createAppointment" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: #3498db;" text="Create" textFill="WHITE" />
     </children>
 </AnchorPane>

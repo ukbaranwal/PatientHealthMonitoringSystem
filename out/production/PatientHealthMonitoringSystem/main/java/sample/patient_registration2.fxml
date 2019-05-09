@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680" prefWidth="450" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.PatientRegistration2">
     <children>
-        <ImageView fitHeight="40.0" fitWidth="23.0" layoutX="410.0" layoutY="18.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
+        <ImageView fx:id="img" fitHeight="40.0" fitWidth="23.0" layoutX="410.0" layoutY="18.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
             <image>
                 <Image url="@../resources/icons8-delete-filled-24.png" />
             </image>
@@ -27,7 +27,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <ImageView fx:id="Bthirdpage" fitHeight="50.0" fitWidth="50.0" layoutX="349.0" layoutY="590.0" onMouseClicked="#launchThirdPage">
+        <ImageView fx:id="img2" fitHeight="50.0" fitWidth="50.0" layoutX="349.0" layoutY="590.0" onMouseClicked="#launchThirdPage">
             <image>
                 <Image url="@../resources/icons8-next-page-64.png" />
             </image>
@@ -37,7 +37,7 @@
                 <Image url="@../resources/clipboard%20(1).png" />
             </image>
         </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="45.0" layoutY="590.0" onMouseClicked="#launchFirstPage">
+      <ImageView fx:id="img1" fitHeight="50.0" fitWidth="50.0" layoutX="45.0" layoutY="590.0" onMouseClicked="#launchFirstPage">
          <image>
             <Image url="@../resources/icons8-next-page-64%20copy.png" />
          </image>

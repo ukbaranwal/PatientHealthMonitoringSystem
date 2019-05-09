@@ -3,6 +3,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,15 +17,26 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
-public class LoginFormController {
+public class LoginFormController implements Initializable {
     @FXML
     private JFXTextField useridlogin;
     @FXML
     private JFXPasswordField passwordFieldlogin;
     @FXML
-    private Button submitloginButton;
+    private Button submitloginButton, registerbutton;
+    @FXML
+    private Circle min, close;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(submitloginButton);
+        Utilities.buttonEffect(min);
+        Utilities.buttonEffect(close);
+        Utilities.cursorEffect(registerbutton);
+    }
 
     @FXML
     protected void handleSubmitLoginButtonAction(ActionEvent event) {

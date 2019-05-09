@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -29,6 +30,9 @@ public class PatientEditDetails implements Initializable {
     private JFXTextArea patients_eextra;
     @FXML
     private Label patients_eid;
+    @FXML
+    private ImageView img1, img2;
+    private Button btn;
     private static Integer j, k;
     private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x;
     public static int ID;
@@ -84,6 +88,9 @@ public class PatientEditDetails implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(btn);
+        Utilities.buttonEffect(img1);
+        Utilities.buttonEffect(img2);
         try {
             setDetails();
             patients_eid.setText("Patient ID : " + ID);
@@ -121,6 +128,11 @@ public class PatientEditDetails implements Initializable {
     }
     @FXML
     protected void saveDetails(MouseEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to save the changes", ButtonType.CANCEL, ButtonType.YES);
+        if(alert.getResult()==ButtonType.CANCEL){
+            return;
+        }
+        alert.showAndWait();
         try {
             Window owner = ((Node)event.getTarget()).getScene().getWindow();
             if (patients_ename.getText().isEmpty()) {

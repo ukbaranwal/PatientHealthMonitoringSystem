@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -30,6 +31,10 @@ public class PatientWholeDetails implements Initializable {
     private JFXTextArea patients_wextra;
     @FXML
     private Label patients_wid;
+    @FXML
+    private Button btn;
+    @FXML
+    private ImageView img1, img2;
     private static Integer j, k;
     private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x, y;
     public static int ID;
@@ -124,6 +129,9 @@ public class PatientWholeDetails implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(btn);
+        Utilities.buttonEffect(img1);
+        Utilities.buttonEffect(img2);
         try {
             setDetails();
             patients_wid.setText("Patient ID : " + ID);

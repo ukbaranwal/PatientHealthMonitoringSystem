@@ -1,4 +1,5 @@
 package main.java.sample;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -6,10 +7,13 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
+
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -27,12 +31,15 @@ public class PatientRegistration1 implements Initializable{
     private ComboBox patients_gender;
     @FXML
     private DatePicker patients_dob;
+    @FXML
+    private ImageView exitButton, img;
     private static Integer j, k;
     private static String a, b, c, d, e, f, g, h, i, l;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        patients_dob.setValue(LocalDate.of(1997,10,31));
+        Utilities.buttonEffect(exitButton);
+        Utilities.cursorEffect(img);
         try{
         if(PatientRegistrationDetails.getFlag()==1){
             patients_name.setText(PatientRegistrationDetails.getA());

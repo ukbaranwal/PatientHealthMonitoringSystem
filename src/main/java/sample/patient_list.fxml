@@ -20,7 +20,7 @@
             <Image url="@../resources/red-30141_640.png" />
         </image>
     </ImageView>
-    <Label fx:id="hospitalname" alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="37.0" prefWidth="314.0" style="-fx-text-transform: uppercase;" styleClass="title-label" textAlignment="CENTER" textFill="WHITE" underline="true" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+    <Label fx:id="hospitalname" alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="37.0" prefWidth="564.0" style="-fx-text-transform: uppercase;" styleClass="title-label" textAlignment="CENTER" textFill="WHITE" underline="true" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
         <font>
             <Font name="Chalkboard Bold" size="28.0" />
         </font></Label>
@@ -29,7 +29,7 @@
             <Image url="@../resources/red-30141_640.png" />
         </image>
     </ImageView>
-    <Button minWidth="308.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="ADD NEW PATIENT" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <Button fx:id="btn_newpatient" minWidth="308.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="ADD NEW PATIENT" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
         <graphic>
             <ImageView fitHeight="116.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -38,9 +38,9 @@
             </ImageView>
         </graphic>
     </Button>
-    <Button alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#sendreminders" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    <Button fx:id="btn_reminder" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#sendreminders" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
     </Button>
-    <Button alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#launchAppointmentsPage" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Appointments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    <Button fx:id="btn_appoint" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#launchAppointmentsPage" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Appointments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
       <GridPane.margin>
          <Insets left="136.0" />
       </GridPane.margin></Button>

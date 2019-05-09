@@ -47,6 +47,7 @@ public class EditMedicalRecords implements Initializable {
     List<File> list = null;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Utilities.buttonEffect(btn_record);
         String[] list;
         File f = null;
         String[] list2;

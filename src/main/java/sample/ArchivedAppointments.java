@@ -38,6 +38,8 @@ public class ArchivedAppointments implements Initializable {
     @FXML
     private TextField searchName, searchID, searchFather, searchMobile, searchDate;
     @FXML
+    private Button btn1, btn2;
+    @FXML
     private Label hospitalname;
     private static String searchFlag;
     private static String searchWord;
@@ -62,6 +64,8 @@ public class ArchivedAppointments implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hospitalname.setText(Utilities.HOSPITAL);
         fillTables();
+        Utilities.buttonEffect(btn1);
+        Utilities.buttonEffect(btn2);
         tablepatientappointment.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
