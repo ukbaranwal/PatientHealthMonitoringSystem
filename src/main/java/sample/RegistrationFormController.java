@@ -22,16 +22,11 @@ public class RegistrationFormController {
     private PasswordField passwordField, confirmField;
     @FXML
     private Button submitButton;
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/userdetails";
-    static final String USER = "PHMS";
-    static final String PASS = "31101997";
     public void register(String a, String b, String c, String d, String e) {
         Connection con = null;
         Statement stmt = null;
         try {
-            Class.forName(JDBC_DRIVER);
-            con = DriverManager.getConnection(DB_URL, USER, PASS);
+            con = Utilities.getConnection();
             stmt = con.createStatement();
             String sql = "INSERT INTO details " + "VALUES ('102','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"')";
             stmt.executeUpdate(sql);

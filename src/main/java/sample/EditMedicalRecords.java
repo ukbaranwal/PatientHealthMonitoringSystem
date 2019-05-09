@@ -29,7 +29,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 
-public class ShowMedicalRecords implements Initializable {
+public class EditMedicalRecords implements Initializable {
     @FXML
     private ListView<String> medicalrecordslist;
     @FXML
@@ -42,7 +42,7 @@ public class ShowMedicalRecords implements Initializable {
         return ID;
     }
     public static void setID(int ID) {
-        ShowMedicalRecords.ID = ID;
+        EditMedicalRecords.ID = ID;
     }
     List<File> list = null;
     @Override
@@ -52,6 +52,20 @@ public class ShowMedicalRecords implements Initializable {
         String[] list2;
         ArrayList<String> array = new ArrayList<String>();
         medicalrecordlabel.setText("Patient ID : "+ID);
+        javafx.scene.control.MenuItem item1 = new javafx.scene.control.MenuItem("Delete this Record");
+        item1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                try{
+                    File f2 = new File(PATH+"patientID_"+ID+"/"+medicalrecordslist.getSelectionModel().getSelectedItem());
+                    f2.delete();
+                    reinitialize();
+                }catch (Exception ex){
+
+                }
+            }
+        });
+        final ContextMenu contextMenu = new ContextMenu(item1);
+        medicalrecordslist.setContextMenu(contextMenu);
         try{
             f=new File("/Users/utkarsh/MedicalRecords/patientID_"+ID);
             list = f.list();
@@ -77,5 +91,47 @@ public class ShowMedicalRecords implements Initializable {
                 }
             }
         });
+    }
+    private void reinitialize(){
+        String[] list;
+        File f = null;
+        ArrayList<String> array = new ArrayList<String>();
+        try{
+            f=new File("/Users/utkarsh/MedicalRecords/patientID_"+ID);
+            list = f.list();
+            ObservableList <String> observableList = FXCollections.observableArrayList(list);
+            medicalrecordslist.setItems(observableList);
+        }catch (Exception e) {
+
+        }
+    }
+    @FXML
+    protected void addMedicalRecords() throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        //Set extension filter
+        FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
+        FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
+        fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
+        String y = "";
+        list = fileChooser.showOpenMultipleDialog(null);
+        int record = 1, flag=0;
+        try {
+            if(!list.isEmpty()) {
+                for (File file : list) {
+                    File temp = new File(PATH+"patientID_" + ID + "/medicalrecord" + record+".jpg");
+                    while(temp.exists()) {
+                        record++;
+                        temp = new File(PATH+"patientID_" + ID + "/medicalrecord" + record+".jpg");
+                    }
+                    Path src = Paths.get(file.getAbsolutePath().toString());
+                    Path dest = Paths.get(PATH+"patientID_" + ID + "/medicalrecord" + record+".jpg");
+                    Files.copy(src, dest);
+                    record++;
+                }
+                reinitialize();
+            }
+        } catch (Exception e){
+
+        }
     }
 }

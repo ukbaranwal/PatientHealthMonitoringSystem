@@ -26,11 +26,6 @@ public class LoginFormController {
     @FXML
     private Button submitloginButton;
 
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/userdetails";
-    static final String USER = "PHMS";
-    static final String PASS = "31101997";
-
     @FXML
     protected void handleSubmitLoginButtonAction(ActionEvent event) {
         Window owner = submitloginButton.getScene().getWindow();
@@ -50,8 +45,7 @@ public class LoginFormController {
             Connection con = null;
             PreparedStatement psm = null;
             ResultSet rs = null;
-            Class.forName(JDBC_DRIVER);
-            con = DriverManager.getConnection(DB_URL, USER, PASS);
+            con = Utilities.getConnection();
             String sql = "SELECT * FROM details WHERE userid = ? and pasword = ?";
             psm = con.prepareStatement(sql);
             psm.setString(1, user);

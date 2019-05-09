@@ -26,13 +26,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class AppointmentPatients implements Initializable {
+public class ArchivedAppointments implements Initializable {
     @FXML
     private TableView<PatientAppointmentDetails> tablepatientappointment;
     @FXML
     private TableColumn<PatientAppointmentDetails, Integer> NO, ID;
     @FXML
-    private TableColumn<PatientAppointmentDetails, String> Name, Father, Mobile, Reason, Dateappointment, Timeappointment, Doctor;
+    private TableColumn<PatientAppointmentDetails, String> Name, Father, Mobile, Reason, Dateappointment, Timeappointment, Doctor, Remark;
     @FXML
     private GridPane appointmentpane;
     @FXML
@@ -40,20 +40,20 @@ public class AppointmentPatients implements Initializable {
     private static String searchFlag;
     private static String searchWord;
 
-    public static String getSearchWord() {
-        return searchWord;
-    }
-
-    public static void setSearchWord(String searchWord) {
-        AppointmentPatients.searchWord = searchWord;
-    }
-
     public static String getSearchFlag() {
         return searchFlag;
     }
 
     public static void setSearchFlag(String searchFlag) {
-        AppointmentPatients.searchFlag = searchFlag;
+        ArchivedAppointments.searchFlag = searchFlag;
+    }
+
+    public static String getSearchWord() {
+        return searchWord;
+    }
+
+    public static void setSearchWord(String searchWord) {
+        ArchivedAppointments.searchWord = searchWord;
     }
 
     @Override
@@ -67,6 +67,7 @@ public class AppointmentPatients implements Initializable {
         Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
         Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
+        Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
         tablepatientappointment.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
@@ -88,36 +89,7 @@ public class AppointmentPatients implements Initializable {
                 }
             }
         });
-        MenuItem item2 = new MenuItem("Check Up Completed\nMove to Archive");
-        item2.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent e) {
-                try {
-                    Stage stage = (Stage) appointmentpane.getScene().getWindow();
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_rating.fxml"));
-                    PatientRating controller = fxmlLoader.<PatientRating>getController();
-                    controller.setNO(tablepatientappointment.getSelectionModel().getSelectedItem().getNO());
-                    controller.setID(tablepatientappointment.getSelectionModel().getSelectedItem().getID());
-                    controller.setName(tablepatientappointment.getSelectionModel().getSelectedItem().getName());
-                    controller.setFather(tablepatientappointment.getSelectionModel().getSelectedItem().getFather());
-                    controller.setContact(tablepatientappointment.getSelectionModel().getSelectedItem().getMobile());
-                    controller.setReason(tablepatientappointment.getSelectionModel().getSelectedItem().getReason());
-                    controller.setDate(tablepatientappointment.getSelectionModel().getSelectedItem().getDateappointment());
-                    controller.setTime(tablepatientappointment.getSelectionModel().getSelectedItem().getTimeappointment());
-                    controller.setDoctor(tablepatientappointment.getSelectionModel().getSelectedItem().getDoctor());
-                    controller.setReason(tablepatientappointment.getSelectionModel().getSelectedItem().getReason());
-                    Scene scene = new Scene(fxmlLoader.load());
-                    Stage newWindow = new Stage();
-                    newWindow.initStyle(StageStyle.TRANSPARENT);
-                    newWindow.setScene(scene);
-                    newWindow.initModality(Modality.WINDOW_MODAL);
-                    newWindow.initOwner(stage);
-                    newWindow.show();
-                } catch (Exception ex) {
-
-                }
-            }
-        });
-        final ContextMenu contextMenu = new ContextMenu(item1,item2);
+        final ContextMenu contextMenu = new ContextMenu(item1);
         tablepatientappointment.setContextMenu(contextMenu);
         tablepatientappointment.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -154,6 +126,7 @@ public class AppointmentPatients implements Initializable {
         Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
         Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
+        Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
         tablepatientappointment.getItems().setAll(searchUserList());
     }
 
@@ -168,6 +141,7 @@ public class AppointmentPatients implements Initializable {
         Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
         Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
+        Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
         tablepatientappointment.getItems().setAll(parseUserList());
     }
 
@@ -179,10 +153,10 @@ public class AppointmentPatients implements Initializable {
             PatientAppointmentDetails pd = null;
             conn = Utilities.getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT * from appointments where " + AppointmentPatients.getSearchFlag() + "='" + AppointmentPatients.getSearchWord() + "';";
+            String sql = "SELECT * from archivedappointments where " + ArchivedAppointments.getSearchFlag() + "='" + ArchivedAppointments.getSearchWord() + "';";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                pd = new PatientAppointmentDetails(rs.getInt("number"), rs.getInt("id"), rs.getString("name"), rs.getString("father"), rs.getString("contact"), rs.getString("reason"), rs.getString("appointdate"), rs.getString("appointtime"), rs.getString("doctor"));
+                pd = new PatientAppointmentDetails(rs.getInt("number"), rs.getInt("id"), rs.getString("name"), rs.getString("father"), rs.getString("contact"), rs.getString("reason"), rs.getString("appointdate"), rs.getString("appointtime"), rs.getString("doctor"), rs.getString("remarks"));
                 list.add(pd);
             }
         } catch (Exception e) {
@@ -265,19 +239,19 @@ public class AppointmentPatients implements Initializable {
         searchMobile.setText("");
         searchFather.setText("");
     }
+
     private List<PatientAppointmentDetails> parseUserList() {
         List<PatientAppointmentDetails> list = new ArrayList<PatientAppointmentDetails>();
         try {
             Connection conn = null;
             Statement stmt = null;
             PatientAppointmentDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT * from appointments";
+            String sql = "SELECT * from archivedappointments";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                pd = new PatientAppointmentDetails(rs.getInt("number"), rs.getInt("id"), rs.getString("name"), rs.getString("father"), rs.getString("contact"), rs.getString("reason"), rs.getString("appointdate"), rs.getString("appointtime"), rs.getString("doctor"));
+                pd = new PatientAppointmentDetails(rs.getInt("number"), rs.getInt("id"), rs.getString("name"), rs.getString("father"), rs.getString("contact"), rs.getString("reason"), rs.getString("appointdate"), rs.getString("appointtime"), rs.getString("doctor"), rs.getString("remarks"));
                 list.add(pd);
             }
         } catch (Exception e) {
@@ -285,7 +259,6 @@ public class AppointmentPatients implements Initializable {
         }
         return list;
     }
-
     @FXML
     protected void launchPatientsPage(ActionEvent event){
         try {
@@ -304,34 +277,11 @@ public class AppointmentPatients implements Initializable {
         }
     }
     @FXML
-    protected void sendreminders(ActionEvent event){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDate localDate = LocalDate.now();
-        String date = localDate.getDayOfMonth()+" "+localDate.getMonth();
-        List<PatientAppointmentDetails> list = new ArrayList<PatientAppointmentDetails>();
-        try {
-            Connection conn = null;
-            Statement stmt = null;
-            PatientAppointmentDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
-            stmt = conn.createStatement();
-            String sql = "SELECT * from appointments where appointdate='" +date+ "';";
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                CreateAppointment.sendMessage(rs.getString("contact"),rs.getString("message"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-    @FXML
-    protected void launchArchivedAppointments(ActionEvent event){
+    protected void launchAppointmentsPage(ActionEvent event){
         try {
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("archived_appointments.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("appointment_patients.fxml")));
             stage.close();
 //            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);

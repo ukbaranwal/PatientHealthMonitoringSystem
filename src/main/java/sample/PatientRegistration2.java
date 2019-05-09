@@ -32,23 +32,6 @@ public class PatientRegistration2 {
     public static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r;
     public static Integer j, k;
 
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        try{
-//            if(PatientRegistrationDetails.getFlag()==1){
-//                patients_allergy.setCheckModel(patients_allergy.getCheckModel());
-//                        getCheckModel().getCheckedIndices();
-//                patients_curmedi.setText(PatientRegistrationDetails.getN());
-//                patients_pastmedi.setText(PatientRegistrationDetails.getO());
-//                patients_chronic;
-//                patients_injuries;
-//                patients_surgeries;
-
-//            }}
-//        catch (Exception e){
-
-//        }
-//    }
     @FXML
     protected void launchFirstPage(MouseEvent event) {
         try {

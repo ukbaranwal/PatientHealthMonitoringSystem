@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class PatientAppointmentDetails {
 
     private SimpleIntegerProperty ID, NO;
-    private SimpleStringProperty Name, Father, Mobile, Reason, Dateappointment, Timeappointment, Doctor, Message;
+    private SimpleStringProperty Name, Father, Mobile, Reason, Dateappointment, Timeappointment, Doctor, Message, Remark;
 
     public PatientAppointmentDetails(Integer NO, Integer ID, String Name, String Father, String Mobile, String Reason, String Dateappoimtment, String Timeappointment, String Doctor) {
         this.ID = new SimpleIntegerProperty(ID);
@@ -18,7 +18,7 @@ public class PatientAppointmentDetails {
         this.Reason = new SimpleStringProperty(Reason);
         this.Doctor = new SimpleStringProperty(Doctor);
     }
-    public PatientAppointmentDetails(Integer NO, Integer ID, String Name, String Father, String Mobile, String Reason, String Dateappoimtment, String Timeappointment, String Doctor, String Message) {
+    public PatientAppointmentDetails(Integer NO, Integer ID, String Name, String Father, String Mobile, String Reason, String Dateappoimtment, String Timeappointment, String Doctor, String Remark) {
         this.ID = new SimpleIntegerProperty(ID);
         this.NO = new SimpleIntegerProperty(NO);
         this.Name = new SimpleStringProperty(Name);
@@ -28,11 +28,24 @@ public class PatientAppointmentDetails {
         this.Timeappointment = new SimpleStringProperty(Timeappointment);
         this.Reason = new SimpleStringProperty(Reason);
         this.Doctor = new SimpleStringProperty(Doctor);
-        this.Message = new SimpleStringProperty(Message);
+        this.Remark = new SimpleStringProperty(Remark);
+        this.Message = new SimpleStringProperty(Remark);
     }
     public PatientAppointmentDetails(String Mobile, String Message) {
         this.Mobile = new SimpleStringProperty(Mobile);
         this.Message = new SimpleStringProperty(Message);
+    }
+
+    public String getRemark() {
+        return Remark.get();
+    }
+
+    public SimpleStringProperty remarkProperty() {
+        return Remark;
+    }
+
+    public void setRemark(String remark) {
+        this.Remark.set(remark);
     }
 
     public String getMessage() {

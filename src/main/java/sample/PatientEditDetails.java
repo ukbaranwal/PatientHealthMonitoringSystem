@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
@@ -30,10 +31,6 @@ public class PatientEditDetails implements Initializable {
     private Label patients_eid;
     private static Integer j, k;
     private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x;
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/userdetails";
-    static final String USER = "PHMS";
-    static final String PASS = "31101997";
     public static int ID;
     public static void setID(int ID) {
         PatientEditDetails.ID = ID;
@@ -43,8 +40,7 @@ public class PatientEditDetails implements Initializable {
             Connection conn = null;
             Statement stmt = null;
             PatientDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT * from patientdetails where id= "+ID+" ;";
             ResultSet rs = stmt.executeQuery(sql);
@@ -78,23 +74,6 @@ public class PatientEditDetails implements Initializable {
         }
     }
 
-//    @FXML
-//    protected void launchEditPage(MouseEvent event) {
-//        try {
-//            Window owner = ((Node)event.getTarget()).getScene().getWindow();
-//            Node node = (Node)event.getSource();
-//            Stage stage = (Stage) node.getScene().getWindow();
-//            stage.close();
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_edit_details.fxml"));
-//            PatientEditDetails controller = fxmlLoader.<PatientEditDetails>getController();
-//            Scene scene = new Scene(fxmlLoader.load());
-//            stage.setScene(scene);
-//            stage.show();
-//            controller.setID(ID);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
         Window owner = ((Node)event.getTarget()).getScene().getWindow();
@@ -264,8 +243,7 @@ public class PatientEditDetails implements Initializable {
         Connection con = null;
         Statement stmt = null;
         try {
-            Class.forName(JDBC_DRIVER);
-            con = DriverManager.getConnection(DB_URL, USER, PASS);
+            con = Utilities.getConnection();
             stmt = con.createStatement();
             String sql = "UPDATE patientdetails " + "SET name='"+a+"', father='"+b+"', dob='"+c+"', gender='"+d+"', contact='"+e+"', email='"+f+"', address='"+g+"', blood='"+h+"', status='"+i+"', height='"+j+"', weight='"+k+"', emergency='"+l+"', curmedi='"+m+"', pastmedi='"+n+"', allergy='"+o+"', chronic='"+p+"', injuries='"+q+"', surgeries='"+r+"', cigar='"+s+"', alcohol='"+t+"', activity='"+u+"', food='"+v+"', profession='"+w+"', extra='"+x+"' where id="+ID;
             stmt.executeUpdate(sql);
@@ -291,8 +269,23 @@ public class PatientEditDetails implements Initializable {
         }
     }
     @FXML
-    protected void editMedicalRecords(ActionEvent event){
-
+    protected void launchMedicalRecords(ActionEvent event){
+        try {
+            Node node = (Node)event.getSource();
+            Stage stage = (Stage)node.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("edit_medical_records.fxml"));
+            EditMedicalRecords controller = fxmlLoader.<EditMedicalRecords>getController();
+            controller.setID(ID);
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage newWindow = new Stage();
+            newWindow.setScene(scene);
+            newWindow.initModality(Modality.WINDOW_MODAL);
+            newWindow.resizableProperty().setValue(Boolean.FALSE);
+            newWindow.initOwner(stage);
+            newWindow.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

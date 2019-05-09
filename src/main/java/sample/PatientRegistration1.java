@@ -29,10 +29,6 @@ public class PatientRegistration1 implements Initializable{
     private DatePicker patients_dob;
     private static Integer j, k;
     private static String a, b, c, d, e, f, g, h, i, l;
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/userdetails";
-    static final String USER = "PHMS";
-    static final String PASS = "31101997";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

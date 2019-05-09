@@ -28,35 +28,14 @@ public class PatientRegistration3 {
     static final String PATH = "/Users/utkarsh/MedicalRecords/";
     @FXML
     private Button submitPatient;
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/userdetails";
-    static final String USER = "PHMS";
-    static final String PASS = "31101997";
     List<File> list = null;
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        try{
-//            if(PatientRegistrationDetails.getFlag()==1){
-//                patient_cigar.getSelectionModel().select(Integer.parseInt(PatientRegistrationDetails.getD().substring(0,1)));
-//                patients_gender.getSelectionModel().select(Integer.parseInt(PatientRegistrationDetails.getD().substring(0,1)));
-//            }}
-//        catch (Exception e){
-//
-//        }
-//    }
     public void submit(String a, String b, String c, String d, String e, String f, String g, String h, String i, Integer j, Integer k, String l, String m, String n, String o, String p, String q, String r, String s, String t, String u, String v, String w, String x) {
-        Connection con = null;
         Statement stmt = null;
         Statement stmt2 = null;
+        Connection con = null;
         try {
-            Class.forName(JDBC_DRIVER);
-            con = DriverManager.getConnection(DB_URL, USER, PASS);
-//            String sql2 = "SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'userdetails' AND TABLE_NAME = 'patientdetails';";
-//            stmt2 = con.createStatement();
+            con = Utilities.getConnection();
             stmt = con.createStatement();
-//            ResultSet rs = stmt2.executeQuery(sql2);
-//            rs.next();
-//            ID = rs.getInt("AUTO_INCREMENT");
             BufferedReader in = new BufferedReader(new FileReader("/Users/utkarsh/Desktop/github/PatientHealthMonitoringSystem/src/main/java/resources/incrementor.txt"));
             ID = Integer.parseInt(in.readLine());
             System.out.println(ID);
@@ -70,14 +49,11 @@ public class PatientRegistration3 {
             }catch (Exception ex){
 
             }
-            String sql = "INSERT INTO patientdetails " + "VALUES(0,'"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"','"+n+"','"+o+"','"+p+"','"+q+"','"+r+"','"+s+"','"+t+"','"+u+"','"+v+"','"+w+"','"+x+"')";
+            String sql = "INSERT INTO patientdetails " + "VALUES(0,'"+a+"','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"','"+n+"','"+o+"','"+p+"','"+q+"','"+r+"','"+s+"','"+t+"','"+u+"','"+v+"','"+w+"','"+x+"','')";
             stmt.executeUpdate(sql);
-        } catch (SQLException se) {
+        } catch (Exception se) {
             //Handle errors for JDBC
             se.printStackTrace();
-        } catch (Exception ex) {
-            //Handle errors for Class.forName
-            ex.printStackTrace();
         } finally {
             //finally block used to close resources
             try {

@@ -117,7 +117,18 @@ public class PatientList implements Initializable {
                 }
             }
         });
-        final ContextMenu contextMenu = new ContextMenu(item1, item2);
+        MenuItem item3 = new MenuItem("Patient Analysis");
+        item3.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                try {
+                    PatientHealthAnalysis.setID(tablepatient.getSelectionModel().getSelectedItem().getID());
+                    PatientHealthAnalysis.runAnalysis();
+                } catch (Exception ex) {
+
+                }
+            }
+        });
+        final ContextMenu contextMenu = new ContextMenu(item1, item2, item3);
         tablepatient.setContextMenu(contextMenu);
         tablepatient.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -177,8 +188,7 @@ public class PatientList implements Initializable {
             Connection conn = null;
             Statement stmt = null;
             PatientDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT * from patientdetails where " + PatientList.getSearchFlag() + "='" + PatientList.getSearchWord() + "';";
             ResultSet rs = stmt.executeQuery(sql);
@@ -266,27 +276,6 @@ public class PatientList implements Initializable {
         searchMobile.setText("");
         searchFather.setText("");
     }
-//        tablepatient.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-//            @Override
-//            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-//                try{
-//                    Stage stage = (Stage)rootpane.getScene().getWindow();
-////                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_whole_details.fxml")));
-//                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_whole_details.fxml"));
-//                    PatientWholeDetails controller = fxmlLoader.<PatientWholeDetails>getController();
-//                    controller.setID(newValue.intValue()+1);
-//                    Scene scene = new Scene(fxmlLoader.load());
-//                    Stage newWindow = new Stage();
-//                    newWindow.initStyle(StageStyle.TRANSPARENT);
-//                    newWindow.setScene(scene);
-//                    newWindow.initModality(Modality.WINDOW_MODAL);
-//                    newWindow.initOwner(stage);
-//                    newWindow.show();}
-//                catch (Exception e){
-//
-//                }
-//            }
-//        });
 
     private List<PatientDetails> parseUserList() {
         List<PatientDetails> list = new ArrayList<PatientDetails>();
@@ -294,8 +283,7 @@ public class PatientList implements Initializable {
             Connection conn = null;
             Statement stmt = null;
             PatientDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT * from patientdetails";
             ResultSet rs = stmt.executeQuery(sql);
@@ -353,8 +341,7 @@ public class PatientList implements Initializable {
             Connection conn = null;
             Statement stmt = null;
             PatientAppointmentDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT * from appointments where appointdate='" +date+ "';";
             ResultSet rs = stmt.executeQuery(sql);

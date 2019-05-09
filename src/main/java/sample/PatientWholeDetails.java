@@ -32,10 +32,6 @@ public class PatientWholeDetails implements Initializable {
     private Label patients_wid;
     private static Integer j, k;
     private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x, y;
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/userdetails";
-    static final String USER = "PHMS";
-    static final String PASS = "31101997";
     public static int ID;
     public static void setID(int ID) {
         PatientWholeDetails.ID = ID;
@@ -45,8 +41,7 @@ public class PatientWholeDetails implements Initializable {
             Connection conn = null;
             Statement stmt = null;
             PatientDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT * from patientdetails where id= "+ID+" ;";
             ResultSet rs = stmt.executeQuery(sql);

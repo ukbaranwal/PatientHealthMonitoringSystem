@@ -33,8 +33,8 @@
       <JFXDatePicker fx:id="appointdate" editable="false" layoutX="55.0" layoutY="130.0" prefHeight="30.0" prefWidth="250.0" promptText="Date" />
       <JFXTimePicker fx:id="appointtime" layoutX="55.0" layoutY="170.0" prefHeight="30.0" prefWidth="250.0" promptText="Time" />
       <Separator layoutX="2.0" layoutY="85.0" prefHeight="11.0" prefWidth="350.0" />
-      <JFXTextArea fx:id="appointreason" focusColor="#009688" layoutX="55.0" layoutY="220.0" prefHeight="90.0" prefWidth="215.0" promptText="Appointment related to?" />
+      <JFXTextArea fx:id="appointreason" focusColor="#009688" layoutX="55.0" layoutY="220.0" prefHeight="90.0" prefWidth="215.0" promptText="Appointment related to?" style="-fx-text-fill: black;" />
         <JFXTextField fx:id="appointdoctor" alignment="TOP_LEFT" focusColor="#009688" layoutX="55" layoutY="320" prefHeight="30.0" prefWidth="215" promptText="Doctor" />
-      <Button layoutX="177.0" layoutY="420.0" minWidth="118.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="120.0" onAction="#createAppointment" style="-fx-background-color: #3498db;" text="Create" textFill="WHITE" />
+      <Button layoutX="177.0" layoutY="420.0" minWidth="118.0" mnemonicParsing="false" onAction="#createAppointment" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: #3498db;" text="Create" textFill="WHITE" />
     </children>
 </AnchorPane>

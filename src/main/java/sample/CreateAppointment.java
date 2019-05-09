@@ -35,10 +35,6 @@ public class CreateAppointment {
     public static String name, contact, father;
     public static final String ACCOUNT_SID = "AC304fa123df9a164738a7ee9799e667d3";
     public static final String AUTH_TOKEN = "c937ae9bb30217f676604bc79fc04d23";
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/userdetails";
-    static final String USER = "PHMS";
-    static final String PASS = "31101997";
     public static int getID() {
         return ID;
     }
@@ -84,8 +80,8 @@ public class CreateAppointment {
         LocalTime localtime = appointtime.getValue();
         String b = appointdoctor.getText().toString();
         String message = "Hey "+name+",\n"+"Your appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
-        sendMessage(contact,message);
-        message = "Hey "+name+",\n"+"Just a reminder\nYour appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
+//        sendMessage(contact,message);
+        message = "\nHey "+name+",\n"+"Just a reminder\nYour appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
         submit(a,localdate.getDayOfMonth()+" "+localdate.getMonth().toString(),localtime.toString(),b, message);
 
 //        System.out.println(message);
@@ -106,10 +102,9 @@ public class CreateAppointment {
         Statement stmt = null;
         Statement stmt2 = null;
         try {
-            Class.forName(JDBC_DRIVER);
-            con = DriverManager.getConnection(DB_URL, USER, PASS);
+            con = Utilities.getConnection();
             stmt = con.createStatement();
-            String sql = "INSERT INTO appointments " + "VALUES(0,'"+ID+"','"+name+"','"+father+"','"+contact+"','"+a+"','"+b+"','"+c+"','"+d+"','"+2+"','"+e+"')";
+            String sql = "INSERT INTO appointments " + "VALUES(0,'"+ID+"','"+name+"','"+father+"','"+contact+"','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             //Handle errors for JDBC
