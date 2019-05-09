@@ -20,7 +20,7 @@
             <Image url="@../resources/red-30141_640.png" />
         </image>
     </ImageView>
-    <Label alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="37.0" prefWidth="314.0" style="-fx-text-transform: uppercase;" styleClass="title-label" text="ANSH NEURO CLINIC" textAlignment="CENTER" textFill="WHITE" underline="true" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+    <Label fx:id="hospitalname" alignment="CENTER" contentDisplay="CENTER" minWidth="80" prefHeight="37.0" prefWidth="314.0" style="-fx-text-transform: uppercase;" styleClass="title-label" textAlignment="CENTER" textFill="WHITE" underline="true" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
         <font>
             <Font name="Chalkboard Bold" size="28.0" />
         </font></Label>

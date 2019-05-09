@@ -42,6 +42,7 @@ public class PatientList implements Initializable {
     @FXML
     private GridPane rootpane;
     @FXML
+    private Label hospitalname;
     private TextField searchName, searchID, searchFather, searchMobile, searchBlood;
     private static String searchFlag;
     private static String searchWord;
@@ -64,15 +65,8 @@ public class PatientList implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Name.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Mobile"));
-        Gender.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Gender"));
-        Email.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Email"));
-        DOB.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("DOB"));
-        Emergency.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Emergency"));
-        Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
+        hospitalname.setText(Utilities.HOSPITAL);
+        fillTables();
         tablepatient.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
@@ -156,29 +150,13 @@ public class PatientList implements Initializable {
 
     @FXML
     public void repopulateTable() {
-        Name.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Mobile"));
-        Gender.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Gender"));
-        Email.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Email"));
-        DOB.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("DOB"));
-        Emergency.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Emergency"));
-        Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
+        fillTables();
         tablepatient.getItems().setAll(searchUserList());
     }
 
     @FXML
     public void populateTable() {
-        Name.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Mobile"));
-        Gender.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Gender"));
-        Email.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Email"));
-        DOB.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("DOB"));
-        Emergency.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Emergency"));
-        Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
+        fillTables();
         tablepatient.getItems().setAll(parseUserList());
     }
 
@@ -355,5 +333,17 @@ public class PatientList implements Initializable {
             e.printStackTrace();
         }
 
+    }
+    @FXML
+    private void fillTables(){
+        Name.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Name"));
+        Father.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Father"));
+        Mobile.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Mobile"));
+        Gender.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Gender"));
+        Email.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Email"));
+        DOB.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("DOB"));
+        Emergency.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Emergency"));
+        Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
+        ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
     }
 }

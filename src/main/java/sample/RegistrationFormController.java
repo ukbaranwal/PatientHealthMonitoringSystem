@@ -28,7 +28,7 @@ public class RegistrationFormController {
         try {
             con = Utilities.getConnection();
             stmt = con.createStatement();
-            String sql = "INSERT INTO details " + "VALUES ('102','"+a+"','"+b+"','"+c+"','"+d+"','"+e+"')";
+            String sql = "INSERT INTO details " + "VALUES (0,'"+a+"','"+b+"','"+c+"','"+d+"','"+e+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException se) {
             //Handle errors for JDBC

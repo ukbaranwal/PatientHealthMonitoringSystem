@@ -37,6 +37,8 @@ public class AppointmentPatients implements Initializable {
     private GridPane appointmentpane;
     @FXML
     private TextField searchName, searchID, searchFather, searchMobile, searchDate;
+    @FXML
+    private Label hospitalname;
     private static String searchFlag;
     private static String searchWord;
 
@@ -58,15 +60,8 @@ public class AppointmentPatients implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
-        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
-        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
-        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
-        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
-        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
+        hospitalname.setText(Utilities.HOSPITAL);
+        fillTables();
         tablepatientappointment.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
@@ -145,29 +140,13 @@ public class AppointmentPatients implements Initializable {
 
     @FXML
     public void repopulateTable() {
-        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
-        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
-        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
-        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
-        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
-        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
+        fillTables();
         tablepatientappointment.getItems().setAll(searchUserList());
     }
 
     @FXML
     public void populateTable() {
-        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
-        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
-        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
-        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
-        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
-        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
+        fillTables();
         tablepatientappointment.getItems().setAll(parseUserList());
     }
 
@@ -271,8 +250,7 @@ public class AppointmentPatients implements Initializable {
             Connection conn = null;
             Statement stmt = null;
             PatientAppointmentDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT * from appointments";
             ResultSet rs = stmt.executeQuery(sql);
@@ -313,8 +291,7 @@ public class AppointmentPatients implements Initializable {
             Connection conn = null;
             Statement stmt = null;
             PatientAppointmentDetails pd = null;
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            conn = Utilities.getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT * from appointments where appointdate='" +date+ "';";
             ResultSet rs = stmt.executeQuery(sql);
@@ -342,5 +319,17 @@ public class AppointmentPatients implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void fillTables(){
+        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
+        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
+        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
+        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
+        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
+        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
+        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
+        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
+        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
     }
 }

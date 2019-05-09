@@ -37,6 +37,8 @@ public class ArchivedAppointments implements Initializable {
     private GridPane appointmentpane;
     @FXML
     private TextField searchName, searchID, searchFather, searchMobile, searchDate;
+    @FXML
+    private Label hospitalname;
     private static String searchFlag;
     private static String searchWord;
 
@@ -58,16 +60,8 @@ public class ArchivedAppointments implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
-        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
-        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
-        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
-        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
-        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
-        Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
+        hospitalname.setText(Utilities.HOSPITAL);
+        fillTables();
         tablepatientappointment.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
@@ -117,31 +111,13 @@ public class ArchivedAppointments implements Initializable {
 
     @FXML
     public void repopulateTable() {
-        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
-        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
-        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
-        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
-        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
-        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
-        Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
+        fillTables();
         tablepatientappointment.getItems().setAll(searchUserList());
     }
 
     @FXML
     public void populateTable() {
-        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
-        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
-        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
-        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
-        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
-        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
-        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
-        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
-        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
-        Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
+        fillTables();
         tablepatientappointment.getItems().setAll(parseUserList());
     }
 
@@ -267,6 +243,7 @@ public class ArchivedAppointments implements Initializable {
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));
             stage.close();
 //            stage.initStyle(StageStyle.TRANSPARENT);
+            stage = new Stage();
             stage.setScene(scene);
 //            stage.initModality(Modality.WINDOW_MODAL);
 //            stage.initOwner(stage);
@@ -292,5 +269,18 @@ public class ArchivedAppointments implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void fillTables(){
+        NO.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("NO"));
+        Name.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Name"));
+        Father.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Father"));
+        Mobile.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Mobile"));
+        Reason.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Reason"));
+        Dateappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Dateappointment"));
+        Timeappointment.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Timeappointment"));
+        Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
+        ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
+        Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
     }
 }

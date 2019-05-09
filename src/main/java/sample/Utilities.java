@@ -11,7 +11,7 @@ public class Utilities {
     static final String DB_URL = "jdbc:mysql://localhost/userdetails";
     static final String USER = "PHMS";
     static final String PASS = "31101997";
-
+    public static String HOSPITAL;
     public static Connection getConnection(){
         Connection conn = null;
         try {
@@ -22,5 +22,4 @@ public class Utilities {
         }
         return conn;
     }
-
 }
