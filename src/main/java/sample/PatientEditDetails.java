@@ -1,5 +1,6 @@
 package main.java.sample;
 import com.jfoenix.controls.JFXTextArea;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -287,6 +289,10 @@ public class PatientEditDetails implements Initializable {
                 se.printStackTrace();
             }
         }
+    }
+    @FXML
+    protected void editMedicalRecords(ActionEvent event){
+
     }
 }
 

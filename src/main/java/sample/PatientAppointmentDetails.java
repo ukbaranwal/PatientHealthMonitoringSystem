@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class PatientAppointmentDetails {
 
     private SimpleIntegerProperty ID, NO;
-    private SimpleStringProperty Name, Father, Mobile, Reason, Dateappointment, Timeappointment, Doctor;
+    private SimpleStringProperty Name, Father, Mobile, Reason, Dateappointment, Timeappointment, Doctor, Message;
 
     public PatientAppointmentDetails(Integer NO, Integer ID, String Name, String Father, String Mobile, String Reason, String Dateappoimtment, String Timeappointment, String Doctor) {
         this.ID = new SimpleIntegerProperty(ID);
@@ -17,6 +17,34 @@ public class PatientAppointmentDetails {
         this.Timeappointment = new SimpleStringProperty(Timeappointment);
         this.Reason = new SimpleStringProperty(Reason);
         this.Doctor = new SimpleStringProperty(Doctor);
+    }
+    public PatientAppointmentDetails(Integer NO, Integer ID, String Name, String Father, String Mobile, String Reason, String Dateappoimtment, String Timeappointment, String Doctor, String Message) {
+        this.ID = new SimpleIntegerProperty(ID);
+        this.NO = new SimpleIntegerProperty(NO);
+        this.Name = new SimpleStringProperty(Name);
+        this.Father = new SimpleStringProperty(Father);
+        this.Mobile = new SimpleStringProperty(Mobile);
+        this.Dateappointment = new SimpleStringProperty(Dateappoimtment);
+        this.Timeappointment = new SimpleStringProperty(Timeappointment);
+        this.Reason = new SimpleStringProperty(Reason);
+        this.Doctor = new SimpleStringProperty(Doctor);
+        this.Message = new SimpleStringProperty(Message);
+    }
+    public PatientAppointmentDetails(String Mobile, String Message) {
+        this.Mobile = new SimpleStringProperty(Mobile);
+        this.Message = new SimpleStringProperty(Message);
+    }
+
+    public String getMessage() {
+        return Message.get();
+    }
+
+    public SimpleStringProperty messageProperty() {
+        return Message;
+    }
+
+    public void setMessage(String message) {
+        this.Message.set(message);
     }
 
     public int getID() {

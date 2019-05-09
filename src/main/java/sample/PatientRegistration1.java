@@ -15,6 +15,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PatientRegistration1 implements Initializable{
     @FXML
@@ -58,7 +60,13 @@ public class PatientRegistration1 implements Initializable{
 
         }
     }
+    public static final Pattern VALIDEMAIL =
+            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
+    public static boolean validate(String emailStr) {
+        Matcher matcher = VALIDEMAIL.matcher(emailStr);
+        return matcher.find();
+    }
     @FXML
     protected void launchSecondPage(MouseEvent event) {
         try {
@@ -97,6 +105,11 @@ public class PatientRegistration1 implements Initializable{
             if (patients_email.getText().isEmpty()) {
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                         "Please enter Patient's Email ID");
+                return;
+            }
+            if (!validate(patients_email.getText().toString())){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Please enter Valid Email ID");
                 return;
             }
             if (patients_address.getText().isEmpty()) {

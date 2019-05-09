@@ -181,7 +181,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button layoutX="329.0" layoutY="730.0" minWidth="200.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #3498db;" text="View Medical Records" textFill="WHITE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" />
+        <Button layoutX="329.0" layoutY="730.0" minWidth="200.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" style="-fx-background-color: #3498db;" onAction="#editMedicalRecords" text="Edit Medical Records" textFill="WHITE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" />
 
     </children>
 </AnchorPane>

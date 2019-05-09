@@ -84,8 +84,10 @@ public class CreateAppointment {
         LocalTime localtime = appointtime.getValue();
         String b = appointdoctor.getText().toString();
         String message = "Hey "+name+",\n"+"Your appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
-        submit(a,localdate.getDayOfMonth()+" "+localdate.getMonth().toString(),localtime.toString(),b, message);
         sendMessage(contact,message);
+        message = "Hey "+name+",\n"+"Just a reminder\nYour appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
+        submit(a,localdate.getDayOfMonth()+" "+localdate.getMonth().toString(),localtime.toString(),b, message);
+
 //        System.out.println(message);
         Alert alert = new Alert(Alert.AlertType.INFORMATION, "Appointment Scheduled");
         alert.showAndWait();
@@ -93,7 +95,7 @@ public class CreateAppointment {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
     }
-    public static void sendMessage(String mobile, String msg){
+    public static void sendMessage(String mobile, String msg) {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(new com.twilio.type.PhoneNumber("+91"+mobile), new com.twilio.type.PhoneNumber("+18577633571"),
                 msg).create();

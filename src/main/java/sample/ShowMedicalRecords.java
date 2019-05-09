@@ -64,5 +64,6 @@ public class ShowMedicalRecords implements Initializable {
                 }
             }
         });
+
     }
 }

@@ -15,6 +15,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -340,5 +342,31 @@ public class PatientList implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    protected void sendreminders(ActionEvent event){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate localDate = LocalDate.now();
+        String date = localDate.getDayOfMonth()+" "+localDate.getMonth();
+        List<PatientAppointmentDetails> list = new ArrayList<PatientAppointmentDetails>();
+        try {
+            Connection conn = null;
+            Statement stmt = null;
+            PatientAppointmentDetails pd = null;
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/userdetails", "PHMS", "31101997");
+            stmt = conn.createStatement();
+            String sql = "SELECT * from appointments where appointdate='" +date+ "';";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+//                pd = new PatientAppointmentDetails(rs.getString("contact"), rs.getString("message"));
+//                System.out.println(rs.getString("contact"));
+//                System.out.println(rs.getString("message"));
+                CreateAppointment.sendMessage(rs.getString("contact"),rs.getString("message"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

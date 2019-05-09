@@ -33,7 +33,7 @@
         </image>
     </ImageView>
     <Button minWidth="308.0" mnemonicParsing="false" onAction="#launchPatientsPage" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="SHOW PATIENTS DETAILS" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <Button alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    <Button alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" onAction="#sendreminders" mnemonicParsing="false" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
     </Button>
 
     <TextField fx:id="searchID" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnID" prefHeight="45.0" prefWidth="204.0" promptText="Search by ID..." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
