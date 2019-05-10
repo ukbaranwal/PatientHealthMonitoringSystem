@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Button?>
@@ -19,12 +20,12 @@
                 <Font name="Skia" size="17.0" />
             </font>
         </Button>
-      <JFXTextField fx:id="useridlogin" alignment="CENTER" labelFloat="true" layoutX="53.0" layoutY="185.0" promptText="User ID" style="-fx-text-fill: WHITE">
+      <JFXTextField fx:id="useridlogin" alignment="CENTER" labelFloat="true" layoutX="53.0" layoutY="175.0" promptText="User ID" style="-fx-text-fill: WHITE">
           <font>
               <Font name="Skia" size="18.0" />
           </font>
       </JFXTextField>
-        <JFXPasswordField fx:id="passwordFieldlogin" alignment="CENTER" labelFloat="true" layoutX="53.0" layoutY="240.0" promptText="Password" style="-fx-text-fill: WHITE">
+        <JFXPasswordField fx:id="passwordFieldlogin" alignment="CENTER" labelFloat="true" layoutX="53.0" layoutY="230.0" promptText="Password" style="-fx-text-fill: WHITE">
             <font>
                 <Font name="Skia" size="18.0" />
             </font>
@@ -44,5 +45,6 @@
                  <Image preserveRatio="true" url="@../resources/hospital.png" />
               </image>
         </ImageView>
+<!--      <JFXCheckBox fx:id="btn_save" layoutX="53.0" layoutY="285.0" onAction="#savePassword" mnemonicParsing="false" prefHeight="18.0" prefWidth="20.0" textFill="#d55746" />-->
     </children>
 </AnchorPane>

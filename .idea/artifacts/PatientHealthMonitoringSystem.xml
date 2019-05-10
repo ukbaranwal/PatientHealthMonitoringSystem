@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="PatientHealthMonitoringSystem">
+    <output-path>$PROJECT_DIR$/out/artifacts/PatientHealthMonitoringSystem</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="main.java.sample.LoginForm" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/main/java/resources/hospital.png" />
+            <option name="macIcon" value="$PROJECT_DIR$/src/main/java/resources/hospital.png" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/main/java/resources/hospital.png" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="title" value="PatientHealthMonitoringSystem" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="PatientHealthMonitoringSystem.jar">
+        <element id="module-output" name="PatientHealthMonitoringSystem" />
+      </element>
+      <element id="library" level="project" name="twilio-7.3.0-jar-with-dependencies" />
+      <element id="library" level="project" name="org.json" />
+      <element id="library" level="project" name="jfoenix-8.0.8" />
+      <element id="library" level="project" name="controlsfx-8.40.15" />
+    </root>
+  </artifact>
+</component>

@@ -1,14 +1,16 @@
 package main.java.sample;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
@@ -16,6 +18,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
+import org.controlsfx.control.action.Action;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -30,6 +34,8 @@ public class LoginFormController implements Initializable {
     private Button submitloginButton, registerbutton;
     @FXML
     private Circle min, close;
+    @FXML
+    private JFXCheckBox btn_save;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Utilities.buttonEffect(submitloginButton);
@@ -102,5 +108,23 @@ public class LoginFormController implements Initializable {
     public void closeclick(MouseEvent event) throws IOException {
         System.exit(0);
     }
+//    @FXML
+//    protected void savePassword(ActionEvent event){
+//        if(btn_save.isSelected()){
+////            btn_save.setText("Password Saved");
+//            try{
+//                Connection con = null;
+//                Statement stmt = null;
+//                con = Utilities.getConnection();
+//                stmt = con.createStatement();
+//                String sql = "SELECT * from usercredentials";
+//                ResultSet rs = stmt.executeQuery(sql);
+//                rs.next();
+//
+//            }catch (Exception e){
+//
+//            }
+//        }
+//    }
 }
 

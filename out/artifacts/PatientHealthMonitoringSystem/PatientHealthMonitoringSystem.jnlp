@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="PatientHealthMonitoringSystem.jnlp">
+  <information>
+    <title>PatientHealthMonitoringSystem</title>
+    <vendor>Unknown</vendor>
+    <description>PatientHealthMonitoringSystem</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="PatientHealthMonitoringSystem.jar" size="260872" download="eager" />
+    <jar href="controlsfx-8.40.15.jar" size="1402490" download="eager" />
+    <jar href="jfoenix-8.0.8.jar" size="2708772" download="eager" />
+    <jar href="org.json.jar" size="48796" download="eager" />
+    <jar href="twilio-7.3.0-jar-with-dependencies.jar" size="6978267" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="main.java.sample.LoginForm"  name="PatientHealthMonitoringSystem" />
+  <update check="background"/>
+</jnlp>

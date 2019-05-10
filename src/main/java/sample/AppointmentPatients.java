@@ -312,6 +312,7 @@ public class AppointmentPatients implements Initializable {
             String sql = "SELECT * from appointments where appointdate='" +localDate.toString()+ "';";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
+                System.out.println(rs.getString("contact")+rs.getString("message"));
                 CreateAppointment.sendMessage(rs.getString("contact"),rs.getString("message"));
             }
         } catch (Exception e) {
