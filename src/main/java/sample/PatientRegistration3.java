@@ -51,7 +51,6 @@ public class PatientRegistration3 implements Initializable {
             stmt = con.createStatement();
             BufferedReader in = new BufferedReader(new FileReader("/Users/utkarsh/Desktop/github/PatientHealthMonitoringSystem/src/main/java/resources/incrementor.txt"));
             ID = Integer.parseInt(in.readLine());
-            System.out.println(ID);
             PrintStream pout = new PrintStream(new FileOutputStream("/Users/utkarsh/Desktop/github/PatientHealthMonitoringSystem/src/main/java/resources/incrementor.txt"));
             pout.println(ID+1);
             try {

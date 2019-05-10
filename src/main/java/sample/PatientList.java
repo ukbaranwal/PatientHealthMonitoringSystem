@@ -209,7 +209,6 @@ public class PatientList implements Initializable {
     @FXML
     protected void searchBasedOnID(ActionEvent event) {
         if (searchID.getText().isEmpty()) {
-            System.out.println(searchID.getText());
             populateTable();
         } else {
             setSearchWord(searchID.getText().toString());

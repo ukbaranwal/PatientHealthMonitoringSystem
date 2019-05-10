@@ -77,7 +77,6 @@ public class EditMedicalRecords implements Initializable {
                     try {
 
                         String record = medicalrecordslist.getSelectionModel().getSelectedItem().toString();
-                        System.out.println(PATH+"patientID_"+ID+"/"+record);
                         File f = new File(PATH+"patientID_"+ID+"/"+record);
                         Desktop dt = Desktop.getDesktop();
                         dt.open(f);

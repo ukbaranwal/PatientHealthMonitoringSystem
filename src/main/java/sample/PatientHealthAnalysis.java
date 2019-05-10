@@ -18,7 +18,6 @@ public class PatientHealthAnalysis{
         PatientHealthAnalysis.ID = ID;
     }
     public static void runAnalysis(){
-        System.out.println(ID);
         Stage primaryStage = new Stage();
         CategoryAxis xAxis = new CategoryAxis();
 
