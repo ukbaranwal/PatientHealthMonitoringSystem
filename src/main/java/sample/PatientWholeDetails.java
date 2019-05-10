@@ -18,10 +18,8 @@ import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class PatientWholeDetails implements Initializable {
@@ -91,10 +89,12 @@ public class PatientWholeDetails implements Initializable {
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+            stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_edit_details.fxml"));
             PatientEditDetails controller = fxmlLoader.<PatientEditDetails>getController();
             controller.setID(ID);
             Scene scene = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -103,7 +103,6 @@ public class PatientWholeDetails implements Initializable {
     }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        Window owner = ((Node)event.getTarget()).getScene().getWindow();
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();

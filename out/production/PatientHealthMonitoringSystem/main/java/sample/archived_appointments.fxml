@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -33,7 +34,21 @@
         </image>
     </ImageView>
     <Button fx:id="btn1" minWidth="270.0" mnemonicParsing="false" onAction="#launchAppointmentsPage" prefHeight="41.0" prefWidth="270.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="SHOW APPOINTMENTS" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#launchPatientsPage" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Patient Details" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM" />
+    <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#launchPatientsPage" prefHeight="35.0" prefWidth="161.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Patient Details" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+      <GridPane.margin>
+         <Insets right="45.0" />
+      </GridPane.margin></Button>
+    <Button fx:id="btn_logout" alignment="CENTER" contentDisplay="CENTER" minWidth="41.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="0.0" prefWidth="42.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    <graphic>
+        <ImageView fitHeight="116.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/256.png" />
+            </image>
+        </ImageView>
+    </graphic>
+    <GridPane.margin>
+        <Insets />
+    </GridPane.margin></Button>
     <TextField fx:id="searchID" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnID" prefHeight="45.0" prefWidth="204.0" promptText="Search by ID..." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
     </TextField>
     <TextField fx:id="searchName" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnName" prefHeight="45.0" prefWidth="204.0" promptText="Search by Name..." GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">

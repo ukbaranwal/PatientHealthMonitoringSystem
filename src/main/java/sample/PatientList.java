@@ -1,19 +1,14 @@
 package main.java.sample;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -21,19 +16,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.Window;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
-@SuppressWarnings("checked")
 public class PatientList implements Initializable {
 
     @FXML
@@ -44,12 +32,21 @@ public class PatientList implements Initializable {
     private TableColumn<PatientDetails, String> Name, Father, Mobile, Email, Gender, DOB, Emergency, Address;
     @FXML
     private GridPane rootpane;
+
+    public GridPane getRootpane() {
+        return rootpane;
+    }
+
+    public void setRootpane(GridPane rootpane) {
+        this.rootpane = rootpane;
+    }
+
     @FXML
     private Label hospitalname;
     @FXML
     private TextField searchName, searchID, searchFather, searchMobile, searchBlood;
     @FXML
-    private Button btn_newpatient, btn_reminder, btn_appoint;
+    private Button btn_newpatient, btn_reminder, btn_appoint, btn_logout;
     private static String searchFlag;
     private static String searchWord;
 
@@ -77,11 +74,13 @@ public class PatientList implements Initializable {
         Utilities.buttonEffect(btn_newpatient);
         Utilities.buttonEffect(btn_reminder);
         Utilities.buttonEffect(btn_appoint);
+        Utilities.buttonEffect(btn_logout);
         tablepatient.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
                 try {
+                    Utilities.event=e;
                     Stage stage = (Stage) rootpane.getScene().getWindow();
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_whole_details.fxml"));
                     PatientWholeDetails controller = fxmlLoader.<PatientWholeDetails>getController();
@@ -102,6 +101,7 @@ public class PatientList implements Initializable {
         item2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
                 try {
+                    Utilities.event=e;
                     Stage stage = (Stage) rootpane.getScene().getWindow();
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("create_appointment.fxml"));
                     CreateAppointment controller = fxmlLoader.<CreateAppointment>getController();
@@ -139,6 +139,7 @@ public class PatientList implements Initializable {
             public void handle(MouseEvent event) {
                 if (event.getClickCount() == 2) {
                     try {
+                        Utilities.event=event;
                         Stage stage = (Stage) rootpane.getScene().getWindow();
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_whole_details.fxml"));
                         PatientWholeDetails controller = fxmlLoader.<PatientWholeDetails>getController();
@@ -289,6 +290,7 @@ public class PatientList implements Initializable {
     @FXML
     protected void addNewPatient(ActionEvent event) {
         try {
+            Utilities.event=event;
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_registration1.fxml")));
@@ -310,10 +312,8 @@ public class PatientList implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("appointment_patients.fxml")));
             stage.close();
-//            stage.initStyle(StageStyle.TRANSPARENT);
+            stage = new Stage();
             stage.setScene(scene);
-//            stage.initModality(Modality.WINDOW_MODAL);
-//            stage.initOwner(stage);
             stage.show();
 
         } catch (Exception e) {
@@ -324,7 +324,6 @@ public class PatientList implements Initializable {
     protected void sendreminders(ActionEvent event){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate localDate = LocalDate.now();
-//        String date = localDate.getDayOfMonth()+" "+localDate.getMonth();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to send reminders to the patients having today's appointment", ButtonType.CANCEL, ButtonType.YES);
         if(alert.getResult()==ButtonType.CANCEL){
             return;
@@ -340,9 +339,6 @@ public class PatientList implements Initializable {
             String sql = "SELECT * from appointments where appointdate='" +localDate.toString()+ "';";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-//                pd = new PatientAppointmentDetails(rs.getString("contact"), rs.getString("message"));
-//                System.out.println(rs.getString("contact"));
-//                System.out.println(rs.getString("message"));
                 CreateAppointment.sendMessage(rs.getString("contact"),rs.getString("message"));
             }
         } catch (Exception e) {
@@ -362,5 +358,25 @@ public class PatientList implements Initializable {
         Address.setCellValueFactory(new PropertyValueFactory<PatientDetails, String>("Address"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientDetails, Integer>("ID"));
     }
+    @FXML
+    private void LogOut(ActionEvent event){
+        try {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to Logout", ButtonType.CANCEL, ButtonType.YES);
+            alert.showAndWait();
+            if(alert.getResult()==ButtonType.CANCEL){
+                return;
+            }
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login_form.fxml")));
+            stage.close();
+            stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

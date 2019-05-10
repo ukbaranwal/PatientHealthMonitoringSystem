@@ -1,5 +1,6 @@
 package main.java.sample;
 
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -8,13 +9,10 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
-
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class Utilities {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -22,6 +20,7 @@ public class Utilities {
     static final String USER = "PHMS";
     static final String PASS = "31101997";
     public static String HOSPITAL = "Ansh Neuro and Maternity Centre";
+    public static Event event;
     public static Connection getConnection(){
         Connection conn = null;
         try {

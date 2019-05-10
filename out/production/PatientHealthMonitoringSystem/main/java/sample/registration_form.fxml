@@ -19,7 +19,7 @@
                 <Font name="Skia" size="20.0" />
             </font>
         </Label>
-        <Button fx:id="submitButton" alignment="CENTER" layoutX="-5.0" layoutY="543.0" onAction="#handleSubmitButtonAction" prefHeight="57.0" prefWidth="406.0" style="-fx-background-color: #43bb73;" text="REGISTER" textAlignment="CENTER">
+        <Button fx:id="submitButton" defaultButton="true" alignment="CENTER" layoutX="-5.0" layoutY="543.0" onAction="#handleSubmitButtonAction" prefHeight="57.0" prefWidth="406.0" style="-fx-background-color: #43bb73;" text="REGISTER" textAlignment="CENTER">
             <font>
                 <Font name="Skia" size="17.0" />
             </font>

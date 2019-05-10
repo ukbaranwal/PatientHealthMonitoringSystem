@@ -34,9 +34,24 @@
         </image>
     </ImageView>
     <Button fx:id="btn_detail" minWidth="308.0" mnemonicParsing="false" onAction="#launchPatientsPage" prefHeight="41.0" prefWidth="360.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="SHOW PATIENTS DETAILS" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <Button fx:id="btn_reminders" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#sendreminders" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
-    </Button>
-
+    <Button fx:id="btn_reminders" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#sendreminders" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Send Reminders" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <GridPane.margin>
+         <Insets right="45.0" />
+      </GridPane.margin></Button>
+    <Button fx:id="btn_logout" alignment="CENTER" contentDisplay="CENTER" minWidth="41.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="0.0" prefWidth="42.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+    <graphic>
+        <ImageView fitHeight="116.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/256.png" />
+            </image>
+        </ImageView>
+    </graphic>
+    <GridPane.margin>
+        <Insets />
+    </GridPane.margin></Button>
     <TextField fx:id="searchID" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnID" prefHeight="45.0" prefWidth="204.0" promptText="Search by ID..." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
     </TextField>
     <TextField fx:id="searchName" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" onAction="#searchBasedOnName" prefHeight="45.0" prefWidth="204.0" promptText="Search by Name..." GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
@@ -60,9 +75,9 @@
             <TableColumn fx:id="Doctor" prefWidth="186.0" text="Doctor " />
         </columns>
     </TableView>
-   <Button fx:id="btn_archive" alignment="CENTER" contentDisplay="CENTER" layoutX="1329.0" layoutY="67.0" minWidth="100.0" mnemonicParsing="false" onAction="#launchArchivedAppointments" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Archived Appointments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+   <Button fx:id="btn_archive" alignment="CENTER" contentDisplay="CENTER" layoutX="1329.0" layoutY="67.0" minWidth="100.0" mnemonicParsing="false" onAction="#launchArchivedAppointments" prefHeight="35.0" prefWidth="209.0" style="-fx-background-color: #3498db; -fx-background-radius: 5;" text="Show Archived Appointments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
       <GridPane.margin>
-         <Insets right="124.0" />
+         <Insets right="169.0" />
       </GridPane.margin></Button>
     <columnConstraints>
         <ColumnConstraints maxWidth="210.0" minWidth="200.0" prefWidth="210.0" />

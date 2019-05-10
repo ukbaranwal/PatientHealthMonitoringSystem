@@ -1,21 +1,12 @@
 
 package main.java.sample;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
-import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ResourceBundle;
 
 public class PatientHealthAnalysis{
     public static int ID;
@@ -59,7 +50,6 @@ public class PatientHealthAnalysis{
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        series.getData().add(new XYChart.Data("12 May", 5));
         //Setting the data to Line chart
         linechart.getData().add(series);
 

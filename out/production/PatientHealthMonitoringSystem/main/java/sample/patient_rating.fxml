@@ -11,7 +11,7 @@
    <children>
       <JFXTextArea fx:id="remarks" focusColor="#009688" labelFloat="true" layoutX="46.0" layoutY="32.0" prefHeight="82.0" prefWidth="215.0" promptText="Doctor's Remarks" style="-fx-text-fill: black;" />
       <JFXTextField fx:id="ratings" alignment="TOP_LEFT" focusColor="#009688" labelFloat="true" layoutX="46.0" layoutY="138.0" prefHeight="27.0" prefWidth="215" promptText="Doctor's Health Rating" style="-fx-text-fill: black;" />
-      <Button layoutX="141.0" layoutY="190.0" minWidth="118.0" mnemonicParsing="false" onAction="#submitratings" prefHeight="14.0" prefWidth="120.0" style="-fx-background-color: #3498db;" text="SUBMIT" textFill="WHITE" />
+      <Button fx:id="btn" defaultButton="true" layoutX="141.0" layoutY="190.0" minWidth="118.0" mnemonicParsing="false" onAction="#submitratings" prefHeight="14.0" prefWidth="120.0" style="-fx-background-color: #3498db;" text="SUBMIT" textFill="WHITE" />
       <ImageView fx:id="img" fitHeight="17.0" fitWidth="16.0" layoutX="268.0" layoutY="14.0" onMouseClicked="#closeclick" opacity="0.5" preserveRatio="true">
          <image>
             <Image url="@../resources/icons8-delete-filled-24.png" />

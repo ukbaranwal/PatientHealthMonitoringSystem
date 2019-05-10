@@ -14,11 +14,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class PatientEditDetails implements Initializable {
@@ -32,6 +30,7 @@ public class PatientEditDetails implements Initializable {
     private Label patients_eid;
     @FXML
     private ImageView img1, img2;
+    @FXML
     private Button btn;
     private static Integer j, k;
     private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x;
@@ -80,7 +79,6 @@ public class PatientEditDetails implements Initializable {
 
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        Window owner = ((Node)event.getTarget()).getScene().getWindow();
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
@@ -129,10 +127,10 @@ public class PatientEditDetails implements Initializable {
     @FXML
     protected void saveDetails(MouseEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to save the changes", ButtonType.CANCEL, ButtonType.YES);
+        alert.showAndWait();
         if(alert.getResult()==ButtonType.CANCEL){
             return;
         }
-        alert.showAndWait();
         try {
             Window owner = ((Node)event.getTarget()).getScene().getWindow();
             if (patients_ename.getText().isEmpty()) {
@@ -238,10 +236,12 @@ public class PatientEditDetails implements Initializable {
             }
             x=patients_eextra.getText();
             update(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x);
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "",
-                    "Patient Added Successfuly!");
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, owner, "",
+                    "Details edited Successfuly!");
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+            stage = (Stage)((Node)Utilities.event.getSource()).getScene().getWindow();
             stage.close();
             stage = new Stage();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));

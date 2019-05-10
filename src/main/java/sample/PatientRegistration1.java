@@ -1,23 +1,17 @@
 package main.java.sample;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import com.jfoenix.controls.JFXTextField;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,8 +19,6 @@ import java.util.regex.Pattern;
 public class PatientRegistration1 implements Initializable{
     @FXML
     private TextField patients_name, patients_father, patients_contact, patients_email, patients_address, patients_blood, patients_marital, patients_height, patients_weight, patients_emergency;
-    @FXML
-    private Button button_newpatient;
     @FXML
     private ComboBox patients_gender;
     @FXML
@@ -63,10 +55,10 @@ public class PatientRegistration1 implements Initializable{
 
         }
     }
-    public static final Pattern VALIDEMAIL =
+    private static final Pattern VALIDEMAIL =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
-    public static boolean validate(String emailStr) {
+    private static boolean validate(String emailStr) {
         Matcher matcher = VALIDEMAIL.matcher(emailStr);
         return matcher.find();
     }
@@ -175,6 +167,7 @@ public class PatientRegistration1 implements Initializable{
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+            stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_registration2.fxml"));
             PatientRegistrationDetails controller = fxmlLoader.<PatientRegistrationDetails>getController();
             Scene scene = new Scene(fxmlLoader.load());
@@ -199,7 +192,6 @@ public class PatientRegistration1 implements Initializable{
     }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        Window owner = ((Node)event.getTarget()).getScene().getWindow();
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();

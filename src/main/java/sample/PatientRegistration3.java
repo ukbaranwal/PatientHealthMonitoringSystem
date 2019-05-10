@@ -10,7 +10,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
@@ -83,22 +82,22 @@ public class PatientRegistration3 implements Initializable {
             }
         }
     }
-//    @FXML
-//    protected void launchSecondPage(MouseEvent event) {
-//        try {
-//            Node node = (Node)event.getSource();
-//            Stage stage = (Stage) node.getScene().getWindow();
-//            stage.close();
-//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_registration2.fxml")));
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    @FXML
+    protected void launchSecondPage(MouseEvent event) {
+        try {
+            Node node = (Node)event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+            stage = new Stage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_registration2.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     protected void submitForm(ActionEvent event) throws Exception {
-        Window owner = submitPatient.getScene().getWindow();
         if(patient_cigar.getValue().toString().equals("Cigarette Consumption")){
             s = "";
         }else{
@@ -131,6 +130,8 @@ public class PatientRegistration3 implements Initializable {
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
+        stage = (Stage)((Node)Utilities.event.getSource()).getScene().getWindow();
+        stage.close();
         stage = new Stage();
         PatientRegistrationDetails.setFlag(0);
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));
@@ -151,7 +152,6 @@ public class PatientRegistration3 implements Initializable {
     }
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        Window owner = ((Node)event.getTarget()).getScene().getWindow();
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();

@@ -37,7 +37,6 @@ public class LoginFormController implements Initializable {
         Utilities.buttonEffect(close);
         Utilities.cursorEffect(registerbutton);
     }
-
     @FXML
     protected void handleSubmitLoginButtonAction(ActionEvent event) {
         Window owner = submitloginButton.getScene().getWindow();
@@ -72,7 +71,8 @@ public class LoginFormController implements Initializable {
                 stage.setScene(scene);
                 stage.show();
             } else {
-                System.out.println("Failed");
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Error!",
+                        "Please enter correct password");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,6 +86,7 @@ public class LoginFormController implements Initializable {
             Node node = (Node)event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+            stage=new Stage();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("registration_form.fxml")));
             stage.setScene(scene);
             stage.show();

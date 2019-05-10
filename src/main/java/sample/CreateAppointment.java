@@ -1,10 +1,8 @@
 package main.java.sample;
-
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTimePicker;
-import com.sun.org.apache.xml.internal.security.Init;
 import com.twilio.Twilio;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,17 +10,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import com.twilio.rest.api.v2010.account.Message;
-
 import java.io.*;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -44,8 +39,8 @@ public class CreateAppointment implements Initializable {
     private ImageView img;
     public static int ID;
     public static String name, contact, father;
-    public static final String ACCOUNT_SID = "AC304fa123df9a164738a7ee9799e667d3";
-    public static final String AUTH_TOKEN = "c937ae9bb30217f676604bc79fc04d23";
+    private static final String ACCOUNT_SID = "AC304fa123df9a164738a7ee9799e667d3";
+    private static final String AUTH_TOKEN = "c937ae9bb30217f676604bc79fc04d23";
     public static int getID() {
         return ID;
     }
@@ -86,7 +81,6 @@ public class CreateAppointment implements Initializable {
 
     @FXML
     public void closeclick(MouseEvent event) throws IOException {
-        Window owner = ((Node)event.getTarget()).getScene().getWindow();
         Node node = (Node)event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
@@ -131,11 +125,9 @@ public class CreateAppointment implements Initializable {
         LocalTime localtime = appointtime.getValue();
         String b = appointdoctor.getText().toString();
         String message = "Hey "+name+",\n"+"Your appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
-//        sendMessage(contact,message);
+        sendMessage(contact,message);
         message = "\nHey "+name+",\n"+"Just a reminder\nYour appointment has been scheduled on "+localdate.getDayOfWeek()+", "+localdate.getMonth().toString()+" "+localdate.getDayOfMonth()+" "+localdate.getYear()+" at "+localtime.toString()+" Hrs with "+b+" at Ansh Neuro Hospital, Varanasi.\nFor any queries contact on 7355972739\nThank you";
         submit(a,localdate.toString(),localtime.toString(),b, message);
-
-//        System.out.println(message);
         Alert alert = new Alert(Alert.AlertType.INFORMATION, "Appointment Scheduled");
         alert.showAndWait();
         Node node = (Node)event.getSource();
@@ -148,7 +140,7 @@ public class CreateAppointment implements Initializable {
                 msg).create();
         System.out.println(message.getSid());
     }
-    public void submit(String a, String b, String c, String d, String e){
+    private void submit(String a, String b, String c, String d, String e){
         Connection con = null;
         Statement stmt = null;
         Statement stmt2 = null;

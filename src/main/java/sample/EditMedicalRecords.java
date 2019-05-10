@@ -4,21 +4,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +28,7 @@ public class EditMedicalRecords implements Initializable {
     @FXML
     private Button btn_record;
     private static int ID;
-    static final String PATH = "/Users/utkarsh/MedicalRecords/";
+    private static final String PATH = "/Users/utkarsh/MedicalRecords/";
     public static int getID() {
         return ID;
     }
@@ -50,15 +41,19 @@ public class EditMedicalRecords implements Initializable {
         Utilities.buttonEffect(btn_record);
         String[] list;
         File f = null;
-        String[] list2;
-        ArrayList<String> array = new ArrayList<String>();
         medicalrecordlabel.setText("Patient ID : "+ID);
         javafx.scene.control.MenuItem item1 = new javafx.scene.control.MenuItem("Delete this Record");
         item1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
                 try{
                     File f2 = new File(PATH+"patientID_"+ID+"/"+medicalrecordslist.getSelectionModel().getSelectedItem());
-                    f2.delete();
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to Logout", ButtonType.CANCEL, ButtonType.YES);
+                    alert.showAndWait();
+                    if(alert.getResult()==ButtonType.CANCEL){
+                        return;
+                    }else{
+                        f2.delete();
+                    }
                     reinitialize();
                 }catch (Exception ex){
 
@@ -115,7 +110,7 @@ public class EditMedicalRecords implements Initializable {
         fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
         String y = "";
         list = fileChooser.showOpenMultipleDialog(null);
-        int record = 1, flag=0;
+        int record = 1;
         try {
             if(!list.isEmpty()) {
                 for (File file : list) {

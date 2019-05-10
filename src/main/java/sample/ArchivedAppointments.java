@@ -1,5 +1,4 @@
 package main.java.sample;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,14 +13,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -38,25 +33,25 @@ public class ArchivedAppointments implements Initializable {
     @FXML
     private TextField searchName, searchID, searchFather, searchMobile, searchDate;
     @FXML
-    private Button btn1, btn2;
+    private Button btn1, btn2, btn_logout;
     @FXML
     private Label hospitalname;
     private static String searchFlag;
     private static String searchWord;
 
-    public static String getSearchFlag() {
+    private static String getSearchFlag() {
         return searchFlag;
     }
 
-    public static void setSearchFlag(String searchFlag) {
+    private static void setSearchFlag(String searchFlag) {
         ArchivedAppointments.searchFlag = searchFlag;
     }
 
-    public static String getSearchWord() {
+    private static String getSearchWord() {
         return searchWord;
     }
 
-    public static void setSearchWord(String searchWord) {
+    private static void setSearchWord(String searchWord) {
         ArchivedAppointments.searchWord = searchWord;
     }
 
@@ -66,6 +61,7 @@ public class ArchivedAppointments implements Initializable {
         fillTables();
         Utilities.buttonEffect(btn1);
         Utilities.buttonEffect(btn2);
+        Utilities.buttonEffect(btn_logout);
         tablepatientappointment.getItems().setAll(parseUserList());
         MenuItem item1 = new MenuItem("View Details");
         item1.setOnAction(new EventHandler<ActionEvent>() {
@@ -87,7 +83,18 @@ public class ArchivedAppointments implements Initializable {
                 }
             }
         });
-        final ContextMenu contextMenu = new ContextMenu(item1);
+        MenuItem item2 = new MenuItem("Patient Analysis");
+        item2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                try {
+                    PatientHealthAnalysis.setID(tablepatientappointment.getSelectionModel().getSelectedItem().getID());
+                    PatientHealthAnalysis.runAnalysis();
+                } catch (Exception ex) {
+
+                }
+            }
+        });
+        final ContextMenu contextMenu = new ContextMenu(item1,item2);
         tablepatientappointment.setContextMenu(contextMenu);
         tablepatientappointment.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -114,13 +121,13 @@ public class ArchivedAppointments implements Initializable {
     }
 
     @FXML
-    public void repopulateTable() {
+    private void repopulateTable() {
         fillTables();
         tablepatientappointment.getItems().setAll(searchUserList());
     }
 
     @FXML
-    public void populateTable() {
+    private void populateTable() {
         fillTables();
         tablepatientappointment.getItems().setAll(parseUserList());
     }
@@ -246,11 +253,8 @@ public class ArchivedAppointments implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("patient_list.fxml")));
             stage.close();
-//            stage.initStyle(StageStyle.TRANSPARENT);
             stage = new Stage();
             stage.setScene(scene);
-//            stage.initModality(Modality.WINDOW_MODAL);
-//            stage.initOwner(stage);
             stage.show();
 
         } catch (Exception e) {
@@ -264,10 +268,8 @@ public class ArchivedAppointments implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("appointment_patients.fxml")));
             stage.close();
-//            stage.initStyle(StageStyle.TRANSPARENT);
+            stage = new Stage();
             stage.setScene(scene);
-//            stage.initModality(Modality.WINDOW_MODAL);
-//            stage.initOwner(stage);
             stage.show();
 
         } catch (Exception e) {
@@ -286,5 +288,26 @@ public class ArchivedAppointments implements Initializable {
         Doctor.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Doctor"));
         ID.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, Integer>("ID"));
         Remark.setCellValueFactory(new PropertyValueFactory<PatientAppointmentDetails, String>("Remark"));
+    }
+    @FXML
+    private void LogOut(ActionEvent event){
+        try {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to Logout", ButtonType.CANCEL, ButtonType.YES);
+            alert.showAndWait();
+            if(alert.getResult()==ButtonType.CANCEL){
+                return;
+            }
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login_form.fxml")));
+            stage.close();
+            stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
