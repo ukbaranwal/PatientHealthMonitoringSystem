@@ -41,8 +41,8 @@ public class CreateAppointment implements Initializable {
     private ImageView img;
     public static int ID;
     public static String name, contact, father;
-    private static final String ACCOUNT_SID = "AC304fa123df9a164738a7ee9799e667d3";
-    private static final String AUTH_TOKEN = "c937ae9bb30217f676604bc79fc04d23";
+    private static final String ACCOUNT_SID = "";//You need to provide SID and AUTH_TOKEN that you'll get after signing up for twilio
+    private static final String AUTH_TOKEN = "";
     public static int getID() {
         return ID;
     }
