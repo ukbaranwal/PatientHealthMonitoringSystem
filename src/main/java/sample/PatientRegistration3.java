@@ -18,7 +18,9 @@ import java.nio.file.Paths;
 import java.sql.*;
 import java.util.List;
 import java.util.ResourceBundle;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientRegistration3 implements Initializable {
     @FXML
     private ComboBox patient_cigar, patient_alco, patient_activity, patient_food, patient_profession;
@@ -176,4 +178,6 @@ public class PatientRegistration3 implements Initializable {
         }
     }
 }
-
+/*
+    Created by: Utkarsh Baranwal
+ */

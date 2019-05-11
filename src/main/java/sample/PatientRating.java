@@ -17,7 +17,9 @@ import java.io.*;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientRating implements Initializable {
     @FXML
     private JFXTextArea remarks;
@@ -232,3 +234,6 @@ public class PatientRating implements Initializable {
         Utilities.buttonEffect(btn);
     }
 }
+/*
+    Created by: Utkarsh Baranwal
+ */

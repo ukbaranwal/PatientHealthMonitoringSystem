@@ -22,6 +22,9 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientList implements Initializable {
 
     @FXML
@@ -379,3 +382,6 @@ public class PatientList implements Initializable {
         }
     }
 }
+/*
+    Created by: Utkarsh Baranwal
+ */

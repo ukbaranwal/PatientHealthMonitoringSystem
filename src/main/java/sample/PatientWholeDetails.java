@@ -21,7 +21,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientWholeDetails implements Initializable {
     @FXML
     private JFXTextField patients_wname, patients_wfather, patients_wdob, patients_wgender, patients_wcontact, patients_wemail, patients_waddress, patients_wblood, patients_wmarital, patients_wheight, patients_wweight, patients_wemergency, patients_wallergy, patients_wcurmedi, patients_wpastmedi, patients_wchronic, patients_winjury, patients_wsurgery, patients_wcigar, patients_walco, patients_wactivity, patients_wfood, patients_wprofession;
@@ -163,4 +165,6 @@ public class PatientWholeDetails implements Initializable {
         }
     }
 }
-
+/*
+    Created by: Utkarsh Baranwal
+ */

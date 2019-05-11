@@ -13,7 +13,9 @@ import org.controlsfx.control.CheckComboBox;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientRegistration2 implements Initializable{
     @FXML
     private ImageView img, img2, img1;
@@ -85,3 +87,6 @@ public class PatientRegistration2 implements Initializable{
         Utilities.cursorEffect(img2);
     }
 }
+/*
+    Created by: Utkarsh Baranwal
+ */

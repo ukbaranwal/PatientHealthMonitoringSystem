@@ -22,7 +22,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class AppointmentPatients implements Initializable {
     @FXML
     private TableView<PatientAppointmentDetails> tablepatientappointment;
@@ -369,3 +371,6 @@ public class AppointmentPatients implements Initializable {
         }
     }
 }
+/*
+    Created by: Utkarsh Baranwal
+ */

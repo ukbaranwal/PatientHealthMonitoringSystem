@@ -18,7 +18,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientEditDetails implements Initializable {
     @FXML
     private JFXTextField patients_ename, patients_efather, patients_edob, patients_econtact, patients_eemail, patients_eaddress, patients_eblood, patients_emarital, patients_eheight, patients_eweight, patients_eemergency, patients_eallergy, patients_ecurmedi, patients_epastmedi, patients_echronic, patients_einjury, patients_esurgery;
@@ -300,4 +302,6 @@ public class PatientEditDetails implements Initializable {
         }
     }
 }
-
+/*
+    Created by: Utkarsh Baranwal
+ */

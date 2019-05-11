@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import java.io.IOException;
 import java.net.URL;
@@ -15,7 +16,9 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientRegistration1 implements Initializable{
     @FXML
     private TextField patients_name, patients_father, patients_contact, patients_email, patients_address, patients_blood, patients_marital, patients_height, patients_weight, patients_emergency;
@@ -170,6 +173,7 @@ public class PatientRegistration1 implements Initializable{
             stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("patient_registration2.fxml"));
             PatientRegistrationDetails controller = fxmlLoader.<PatientRegistrationDetails>getController();
+            stage.initStyle(StageStyle.TRANSPARENT);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();
@@ -197,4 +201,6 @@ public class PatientRegistration1 implements Initializable{
         stage.close();
     }
 }
-
+/*
+    Created by: Utkarsh Baranwal
+ */

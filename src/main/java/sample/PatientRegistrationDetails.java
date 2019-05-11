@@ -1,5 +1,7 @@
 package main.java.sample;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientRegistrationDetails {
 
     private static String a, b, c, d, e, f, g, h, i, l, m, n, o, p, q, r, s, t, u, v, w, x;
@@ -205,3 +207,6 @@ public class PatientRegistrationDetails {
         PatientRegistrationDetails.s = s;
     }
 }
+/*
+    Created by: Utkarsh Baranwal
+ */

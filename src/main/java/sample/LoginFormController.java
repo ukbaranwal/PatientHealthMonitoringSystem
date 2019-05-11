@@ -1,30 +1,26 @@
 package main.java.sample;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import com.jfoenix.controls.JFXTextField;
-import org.controlsfx.control.action.Action;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class LoginFormController implements Initializable {
     @FXML
     private JFXTextField useridlogin;
@@ -94,6 +90,7 @@ public class LoginFormController implements Initializable {
             stage.close();
             stage=new Stage();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("registration_form.fxml")));
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -127,4 +124,6 @@ public class LoginFormController implements Initializable {
 //        }
 //    }
 }
-
+/*
+    Created by: Utkarsh Baranwal
+ */

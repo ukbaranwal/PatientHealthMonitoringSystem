@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="PatientHealthMonitoringSystem.jar" size="260872" download="eager" />
+    <jar href="PatientHealthMonitoringSystem.jar" size="261006" download="eager" />
     <jar href="controlsfx-8.40.15.jar" size="1402490" download="eager" />
     <jar href="jfoenix-8.0.8.jar" size="2708772" download="eager" />
     <jar href="org.json.jar" size="48796" download="eager" />

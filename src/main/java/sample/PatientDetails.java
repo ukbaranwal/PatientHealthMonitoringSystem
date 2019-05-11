@@ -1,7 +1,9 @@
 package main.java.sample;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientDetails {
 
     private SimpleIntegerProperty Height, Weight, ID;
@@ -333,3 +335,6 @@ public class PatientDetails {
         this.Profession.set(profession);
     }
 }
+/*
+    Created by: Utkarsh Baranwal
+ */

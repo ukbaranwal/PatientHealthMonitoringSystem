@@ -1,7 +1,9 @@
 package main.java.sample;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-
+/*
+    Created by: Utkarsh Baranwal
+ */
 public class PatientAppointmentDetails {
 
     private SimpleIntegerProperty ID, NO;
@@ -169,3 +171,6 @@ public class PatientAppointmentDetails {
         this.Doctor.set(doctor);
     }
 }
+/*
+    Created by: Utkarsh Baranwal
+ */
